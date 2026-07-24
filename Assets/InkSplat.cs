@@ -15,16 +15,15 @@ public class InkSplat : MonoBehaviour
     [Header("Rotation")]
     [SerializeField] private float rotationSpeed = 15f;
 
-    private RectTransform rectTransform;
-    private Image image;
+    private Transform rectTransform;
+    private SpriteRenderer spriteRenderer;
     private Vector3 originalScale;
 
     private void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
-        image = GetComponent<Image>();
-
-        originalScale = rectTransform.localScale;
+        originalScale = Vector2.one;
+        rectTransform = gameObject.transform;
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         StartCoroutine(InkSplatRoutine());
     }
@@ -33,7 +32,7 @@ public class InkSplat : MonoBehaviour
     {
         Vector3 targetScaleVector = originalScale * targetScale;
 
-        Color originalColor = image.color;
+        Color originalColor = Color.white;
 
         float timer = 0f;
 
@@ -79,7 +78,7 @@ public class InkSplat : MonoBehaviour
                     t
                 );
 
-                image.color = newColor;
+                spriteRenderer.color = newColor;
             }
             else
             {

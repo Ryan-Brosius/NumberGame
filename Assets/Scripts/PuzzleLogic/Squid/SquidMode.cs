@@ -1,10 +1,11 @@
 using UnityEngine;
 
+[RequireComponent(typeof(BoxCollider2D))]
 public class SquidMode : MonoBehaviour
 {
     [Header("propulsion")]
-    [SerializeField] private float minPropelSpeed = 500f;
-    [SerializeField] private float maxPropelSpeed = 1000f;
+    [SerializeField] private float minPropelSpeed = 5f;
+    [SerializeField] private float maxPropelSpeed = 10f;
     [SerializeField] private float minPropelTime = 0.3f;
     [SerializeField] private float maxPropelTime = 0.8f;
     [SerializeField] private float minIdleTime = 0.5f;
@@ -19,8 +20,12 @@ public class SquidMode : MonoBehaviour
     [Header("ink splat")]
     [SerializeField] private GameObject inkSplat;
 
-    private RectTransform rectTransform;
-    private RectTransform canvasRectTransform;
+    [Header("references")]
+    [SerializeField] private Transform visuals;
+    [SerializeField] private Camera boundsCamera;   // defaults to Camera.main
+    [SerializeField] private PuzzleLogicController controller;
+
+    private BoxCollider2D box;
     private Vector2 direction;
     private Vector2 targetDirection;
     private float moveSpeed;
@@ -28,18 +33,26 @@ public class SquidMode : MonoBehaviour
     private bool isPropelling;
     private Vector3 originalScale;
 
+    void Awake()
+    {
+        box = GetComponent<BoxCollider2D>();
+
+        controller = FindFirstObjectByType<PuzzleLogicController>();
+
+        if (boundsCamera == null)
+            boundsCamera = Camera.main;
+
+        if (visuals == null)
+        {
+            var view = GetComponentInChildren<NumberBlockView>();
+            if (view != null)
+                visuals = view.transform;
+        }
+    }
+
     void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
-
-        Canvas canvas = GetComponentInParent<Canvas>();
-
-        if (canvas != null)
-        {
-            canvasRectTransform = canvas.GetComponent<RectTransform>();
-        }
-
-        originalScale = rectTransform.localScale;
+        originalScale = visuals != null ? visuals.localScale : Vector3.one;
 
         direction = Random.insideUnitCircle.normalized;
 
@@ -49,6 +62,7 @@ public class SquidMode : MonoBehaviour
         }
 
         targetDirection = direction;
+        controller.OnSequenceReset.AddListener(() => gameObject.SetActive(true));
 
         RotateInstantly();
         StartIdle();
@@ -74,11 +88,6 @@ public class SquidMode : MonoBehaviour
 
     void Update()
     {
-        if (canvasRectTransform == null)
-        {
-            return;
-        }
-
         stateTimer -= Time.deltaTime;
 
         if (isPropelling)
@@ -90,7 +99,7 @@ public class SquidMode : MonoBehaviour
             IdleAndTurn();
         }
 
-        HandleCanvasBounds();
+        HandleCameraBounds();
         HandleSquash();
     }
 
@@ -116,7 +125,7 @@ public class SquidMode : MonoBehaviour
         RotateTowardsTarget();
 
         float angleDifference = Vector2.Angle(
-            rectTransform.up,
+            transform.up,
             targetDirection
         );
 
@@ -145,8 +154,8 @@ public class SquidMode : MonoBehaviour
 
     void Propel()
     {
-        rectTransform.anchoredPosition +=
-            direction * moveSpeed * Time.deltaTime;
+        transform.position +=
+            (Vector3)(direction * moveSpeed * Time.deltaTime);
 
         RotateTowardsDirection();
 
@@ -158,53 +167,29 @@ public class SquidMode : MonoBehaviour
 
     void RotateTowardsTarget()
     {
-        if (targetDirection.magnitude < 0.01f)
-        {
-            return;
-        }
-
-        float targetAngle =
-            Mathf.Atan2(
-                targetDirection.y,
-                targetDirection.x
-            ) * Mathf.Rad2Deg - 90f;
-
-        Quaternion targetRotation =
-            Quaternion.Euler(
-                0f,
-                0f,
-                targetAngle
-            );
-
-        rectTransform.rotation = Quaternion.RotateTowards(
-            rectTransform.rotation,
-            targetRotation,
-            rotationSpeed * Time.deltaTime
-        );
+        RotateTowards(targetDirection);
     }
 
     void RotateTowardsDirection()
     {
-        if (direction.magnitude < 0.01f)
+        RotateTowards(direction);
+    }
+
+    void RotateTowards(Vector2 dir)
+    {
+        if (dir.magnitude < 0.01f)
         {
             return;
         }
 
         float targetAngle =
-            Mathf.Atan2(
-                direction.y,
-                direction.x
-            ) * Mathf.Rad2Deg - 90f;
+            Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg - 90f;
 
         Quaternion targetRotation =
-            Quaternion.Euler(
-                0f,
-                0f,
-                targetAngle
-            );
+            Quaternion.Euler(0f, 0f, targetAngle);
 
-        rectTransform.rotation = Quaternion.RotateTowards(
-            rectTransform.rotation,
+        transform.rotation = Quaternion.RotateTowards(
+            transform.rotation,
             targetRotation,
             rotationSpeed * Time.deltaTime
         );
@@ -213,84 +198,67 @@ public class SquidMode : MonoBehaviour
     void RotateInstantly()
     {
         float targetAngle =
-            Mathf.Atan2(
-                direction.y,
-                direction.x
-            ) * Mathf.Rad2Deg - 90f;
+            Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
 
-        rectTransform.rotation =
-            Quaternion.Euler(
-                0f,
-                0f,
-                targetAngle
-            );
+        transform.rotation =
+            Quaternion.Euler(0f, 0f, targetAngle);
     }
 
-    void HandleCanvasBounds()
+    void HandleCameraBounds()
     {
-        float canvasWidth = canvasRectTransform.rect.width;
-        float canvasHeight = canvasRectTransform.rect.height;
-        float buttonWidth = rectTransform.rect.width;
-        float buttonHeight = rectTransform.rect.height;
-        float leftBound = -canvasWidth / 2f + buttonWidth / 2f;
-        float rightBound = canvasWidth / 2f - buttonWidth / 2f;
-        float bottomBound = -canvasHeight / 2f + buttonHeight / 2f;
-        float topBound = canvasHeight / 2f - buttonHeight / 2f;
+        float halfHeight = boundsCamera.orthographicSize;
+        float halfWidth = halfHeight * boundsCamera.aspect;
+        Vector3 camPos = boundsCamera.transform.position;
 
-        if (rectTransform.anchoredPosition.x <= leftBound)
+        Vector3 scale = transform.lossyScale;
+        float halfW = box.size.x * 0.5f * Mathf.Abs(scale.x);
+        float halfH = box.size.y * 0.5f * Mathf.Abs(scale.y);
+
+        float leftBound = camPos.x - halfWidth + halfW;
+        float rightBound = camPos.x + halfWidth - halfW;
+        float bottomBound = camPos.y - halfHeight + halfH;
+        float topBound = camPos.y + halfHeight - halfH;
+
+        Vector3 pos = transform.position;
+
+        if (pos.x <= leftBound)
         {
-            rectTransform.anchoredPosition =
-                new Vector2(
-                    leftBound,
-                    rectTransform.anchoredPosition.y
-                );
-
+            pos.x = leftBound;
             direction.x = Mathf.Abs(direction.x);
             targetDirection.x = Mathf.Abs(targetDirection.x);
         }
-        else if (rectTransform.anchoredPosition.x >= rightBound)
+        else if (pos.x >= rightBound)
         {
-            rectTransform.anchoredPosition =
-                new Vector2(
-                    rightBound,
-                    rectTransform.anchoredPosition.y
-                );
-
+            pos.x = rightBound;
             direction.x = -Mathf.Abs(direction.x);
             targetDirection.x = -Mathf.Abs(targetDirection.x);
         }
 
-        if (rectTransform.anchoredPosition.y <= bottomBound)
+        if (pos.y <= bottomBound)
         {
-            rectTransform.anchoredPosition =
-                new Vector2(
-                    rectTransform.anchoredPosition.x,
-                    bottomBound
-                );
-
+            pos.y = bottomBound;
             direction.y = Mathf.Abs(direction.y);
             targetDirection.y = Mathf.Abs(targetDirection.y);
         }
-        else if (rectTransform.anchoredPosition.y >= topBound)
+        else if (pos.y >= topBound)
         {
-            rectTransform.anchoredPosition =
-                new Vector2(
-                    rectTransform.anchoredPosition.x,
-                    topBound
-                );
-
+            pos.y = topBound;
             direction.y = -Mathf.Abs(direction.y);
             targetDirection.y = -Mathf.Abs(targetDirection.y);
         }
+
+        transform.position = pos;
     }
 
     void HandleSquash()
     {
-        if (!useSquash)
+        if (!useSquash || visuals == null)
         {
             return;
         }
+
         Vector3 targetScale = originalScale;
+
         if (isPropelling)
         {
             targetScale = new Vector3(
@@ -299,8 +267,9 @@ public class SquidMode : MonoBehaviour
                 originalScale.z
             );
         }
-        rectTransform.localScale = Vector3.Lerp(
-            rectTransform.localScale,
+
+        visuals.localScale = Vector3.Lerp(
+            visuals.localScale,
             targetScale,
             squashSpeed * Time.deltaTime
         );

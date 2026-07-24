@@ -1,20 +1,23 @@
 using UnityEngine;
-using UnityEngine.Events;
 
-public class WorldButton : MonoBehaviour, ICursorClickable
+public class SquidButton : MonoBehaviour, ICursorClickable
 {
     [SerializeField] private PuzzleLogicController controller;
-    [SerializeField] private int stepIndex => blockView.Value;
-
     [SerializeField] private NumberBlockView blockView;
 
     private bool isClicked = false;
-    public int StepIndex => stepIndex;
+    public int StepIndex => blockView.Value;
+
+    private void Awake()
+    {
+        if (blockView == null)
+            blockView = GetComponentInChildren<NumberBlockView>();
+    }
 
     private void Start()
     {
-        controller = FindAnyObjectByType<PuzzleLogicController>();
-        blockView = GetComponentInChildren<NumberBlockView>();
+        if (controller == null)
+            controller = FindAnyObjectByType<PuzzleLogicController>();
 
         controller.OnSequenceReset.AddListener(HandleReset);
         blockView.IsPressed = false;
@@ -31,17 +34,17 @@ public class WorldButton : MonoBehaviour, ICursorClickable
         if (isClicked)
             return;
 
-        bool correct = controller.ReportAction(stepIndex);
-        Debug.Log(correct);
+        bool correct = controller.ReportAction(StepIndex);
+
         if (correct)
         {
-            blockView.IsPressed = true;
-            blockView.PlayPressedEffects();
             isClicked = true;
+            gameObject.SetActive(false);
         }
         else
         {
-            blockView.PlayIncorrectEffects();
+            // Incorrect sound later
+            //blockView.PlayIncorrectEffects();
         }
     }
 }
