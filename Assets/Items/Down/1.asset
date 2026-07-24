@@ -15,3 +15,4 @@ MonoBehaviour:
   Sprite1: {fileID: -1759575157, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
   Sprite2: {fileID: 0}
   Value: 1
+  ToneSound: {fileID: 8300000, guid: 903be9242a2358a4cb45f5cf3e31b19d, type: 3}
