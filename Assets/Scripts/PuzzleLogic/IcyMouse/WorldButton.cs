@@ -35,8 +35,12 @@ public class WorldButton : MonoBehaviour, ICursorClickable
         if (correct)
         {
             blockView.IsPressed = true;
-            blockView.PlaySfx();
+            blockView.PlayPressedEffects();
             isClicked = true;
+        }
+        else
+        {
+            blockView.PlayIncorrectEffects();
         }
     }
 }

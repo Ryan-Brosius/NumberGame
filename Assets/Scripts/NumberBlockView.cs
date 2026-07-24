@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Audio;
+using DG.Tweening;
 
 public class NumberBlockView : MonoBehaviour
 {
@@ -11,10 +12,15 @@ public class NumberBlockView : MonoBehaviour
     [SerializeField] private SpriteRenderer renderer1;
     [SerializeField] private SpriteRenderer renderer2;
 
-    [Header("Audio Sources")]
+    [Header("Audio")]
     [SerializeField] private AudioSource audioSourceClick;
     [SerializeField] private AudioSource audioSourceTone;
+    [SerializeField] private AudioResource clickSound;
+    [SerializeField] private AudioResource incorrectSound;
 
+    [SerializeField] private AnimationCurve pressedScaleCurve;
+
+    
     const float pitchVariation = 0.1f;
 
     private bool isPressed = false;
@@ -55,11 +61,29 @@ public class NumberBlockView : MonoBehaviour
             audioSourceTone.resource = data != null ? data.ToneSound : null;
     }
 
-    public void PlaySfx()
+    public void PlayPressedEffects()
     {
-        // randomize pitch
+        audioSourceClick.resource = clickSound;
         audioSourceClick.pitch = Random.Range(1.0f - pitchVariation, 1.0f + pitchVariation);
         audioSourceClick.Play();
         audioSourceTone.Play();
+
+        Sequence pressedSequence = DOTween.Sequence();
+        pressedSequence.Append(transform.DOScale(new Vector3(0.8f, 0.8f, 0.8f), 0.1f))
+        .Append(transform.DOScale(new Vector3(1f, 1f, 1f), 0.1f));
+    }
+
+    public void PlayIncorrectEffects()
+    {
+        audioSourceClick.resource = incorrectSound;
+        audioSourceClick.Play();
+
+        var shakeSpeed = 0.06f;
+        Sequence incorrectSequence = DOTween.Sequence();
+        incorrectSequence.Append(transform.DORotate(new Vector3(0f, 0f, 15f), shakeSpeed))
+        .Append(transform.DORotate(new Vector3(0f, 0f, -15f), shakeSpeed))
+        .Append(transform.DORotate(new Vector3(0f, 0f, 15f), shakeSpeed))
+        .Append(transform.DORotate(new Vector3(0f, 0f, -15f), shakeSpeed))
+        .Append(transform.DORotate(new Vector3(0f, 0f, 0f), shakeSpeed));
     }
 }
