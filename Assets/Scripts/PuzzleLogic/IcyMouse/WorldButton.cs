@@ -5,30 +5,23 @@ public class WorldButton : MonoBehaviour, ICursorClickable
     [SerializeField] private PuzzleLogicController controller;
     [SerializeField] private int stepIndex = 1;
 
-    [SerializeField] private NumberBlockData blockData;
+    [SerializeField] private NumberBlockView blockView;
 
     private bool isClicked = false;
-    private SpriteRenderer _spriteRenderer;
     public int StepIndex => stepIndex;
-
-    private void OnValidate()
-    {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-
-        if (blockData != null && _spriteRenderer != null)
-            _spriteRenderer.sprite = blockData.Sprite1;
-    }
 
     private void Start()
     {
         controller = FindAnyObjectByType<PuzzleLogicController>();
+        blockView = GetComponentInChildren<NumberBlockView>();
 
         controller.OnSequenceReset.AddListener(HandleReset);
+        blockView.IsPressed = false;
     }
 
     private void HandleReset()
     {
-        _spriteRenderer.sprite = blockData.Sprite1;
+        blockView.IsPressed = false;
         isClicked = false;
     }
 
@@ -38,9 +31,10 @@ public class WorldButton : MonoBehaviour, ICursorClickable
             return;
 
         bool correct = controller.ReportAction(stepIndex);
+        Debug.Log(correct);
         if (correct)
         {
-            _spriteRenderer.sprite = blockData.Sprite2;
+            blockView.IsPressed = true;
             isClicked = true;
         }
     }

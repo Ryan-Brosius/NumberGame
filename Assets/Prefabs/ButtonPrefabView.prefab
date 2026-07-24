@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   upData: {fileID: 11400000, guid: 80b008be3fb67e84fbbdc856c2684a60, type: 2}
-  pressedData: {fileID: 11400000, guid: 80b008be3fb67e84fbbdc856c2684a60, type: 2}
+  pressedData: {fileID: 11400000, guid: 8641ccc7e89ec6a499c8981b83095a7e, type: 2}
   renderer1: {fileID: 3810792942941303340}
   renderer2: {fileID: 1369808697932315565}
   IsPressed: 0
@@ -132,7 +132,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.5625, y: 0.5625}
+  m_Size: {x: 1.625, y: 1.625}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
