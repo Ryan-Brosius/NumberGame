@@ -3,14 +3,14 @@ using UnityEngine;
 public class PuzzleActionButton : MonoBehaviour
 {
     [Header("References")]
-    [SerializeField] private PuzzleLogicController controller;
+    [SerializeField] private SequentialPuzzleController controller;
 
     [Tooltip("Which step in the sequence this button represents (1 indexed)")]
     [SerializeField] private int stepIndex = 1;
 
     private void Start()
     {
-        controller = FindAnyObjectByType<PuzzleLogicController>();
+        controller = FindAnyObjectByType<SequentialPuzzleController>();
 
         controller.OnSequenceReset.AddListener(HandleReset);
     }

@@ -11,25 +11,66 @@ public class InventoryManager : MonoBehaviour
     [Tooltip("Number blocks are held by inventory slots.")]
     private GameObject inventoryItemPrefab;
     [SerializeField]
-    [Tooltip("Each accessible inventory slot.")]
-    private List<InventorySlot> inventorySlots = new();
-    private int selectedSlot = -1;
+    [Tooltip("Slot prefab to spawn for each item (needs InventorySlot + a Collider2D, no sprite required).")]
+    private GameObject slotPrefab;
 
+    [Header("Layout")]
+    [SerializeField]
+    [Tooltip("Position of the first slot, relative to this transform.")]
+    private Vector3 startPosition = Vector3.zero;
+    [SerializeField]
+    [Tooltip("Offset applied between each successive slot.")]
+    private Vector3 spacing = new Vector3(1.5f, 0, 0);
+    [SerializeField]
+    [Tooltip("Number of slots to generate. Should match the number of items assigned above.")]
+    private int slotCount = 10;
+
+    [Header("Gizmo")]
+    [SerializeField] private bool drawSlotGizmos = true;
+    [SerializeField] private Color gizmoColor = Color.cyan;
+    [SerializeField] private float gizmoRadius = 0.4f;
+
+    [Header("Puzzle")]
+    [SerializeField]
+    [Tooltip("Reports the solved/unsolved state after each change. If left empty, one is added automatically.")]
+    private StateCheckPuzzleController puzzleController;
+
+    private List<InventorySlot> inventorySlots = new();
+
+    private void Awake()
+    {
+        if (puzzleController == null)
+            puzzleController = gameObject.AddComponent<StateCheckPuzzleController>();
+
+        puzzleController.OnSequenceCompleted.AddListener(() => Debug.Log("The game has been won!"));
+    }
 
     private void Start()
     {
-        ChangeSelectedSlot(0);
-
         var shuffled = new List<NumberBlockData>(items);
         do
         {
             Shuffle(shuffled);
         } while (IsOrdered(shuffled));
 
-        for (int i = 0; i < inventorySlots.Count; i++)
+        for (int i = 0; i < slotCount; i++)
         {
-            SpawnNewItem(shuffled[i % shuffled.Count], inventorySlots[i]);
+            var slot = SpawnSlot(i);
+            inventorySlots.Add(slot);
+            SpawnNewItem(shuffled[i % shuffled.Count], slot);
         }
+    }
+
+    InventorySlot SpawnSlot(int index)
+    {
+        var slotGO = Instantiate(slotPrefab, transform);
+        slotGO.transform.position = SlotPosition(index);
+        return slotGO.GetComponent<InventorySlot>();
+    }
+
+    Vector3 SlotPosition(int index)
+    {
+        return transform.position + startPosition + spacing * index;
     }
 
     static void Shuffle(List<NumberBlockData> list)
@@ -52,24 +93,19 @@ public class InventoryManager : MonoBehaviour
 
     public void CheckWinCondition()
     {
+        puzzleController.Evaluate(IsSolved());
+    }
+
+    bool IsSolved()
+    {
         for (int i = 1; i < inventorySlots.Count; i++)
         {
             var previous = inventorySlots[i - 1].GetComponentInChildren<NumberBlock>();
             var current = inventorySlots[i].GetComponentInChildren<NumberBlock>();
-            if (previous == null || current == null) return;
-            if (previous.item.Value > current.item.Value) return;
+            if (previous == null || current == null) return false;
+            if (previous.item.Value > current.item.Value) return false;
         }
-        Debug.Log("The game has been won!");
-    }
-
-    void ChangeSelectedSlot(int newValue)
-    {
-        if (selectedSlot >= 0)
-        {
-            inventorySlots[selectedSlot].Deselect();
-        }
-        inventorySlots[newValue].Select();
-        selectedSlot = newValue;
+        return true;
     }
 
     public bool AddItem(NumberBlockData item)
@@ -92,5 +128,20 @@ public class InventoryManager : MonoBehaviour
         var newItemGO = Instantiate(inventoryItemPrefab, slot.transform);
         var inventoryItem = newItemGO.GetComponent<NumberBlock>();
         inventoryItem.InitializeItem(item);
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (!drawSlotGizmos) return;
+
+        Gizmos.color = gizmoColor;
+        for (int i = 0; i < slotCount; i++)
+        {
+            var pos = SlotPosition(i);
+            Gizmos.DrawWireSphere(pos, gizmoRadius);
+#if UNITY_EDITOR
+            UnityEditor.Handles.Label(pos + Vector3.up * (gizmoRadius + 0.1f), i.ToString());
+#endif
+        }
     }
 }
