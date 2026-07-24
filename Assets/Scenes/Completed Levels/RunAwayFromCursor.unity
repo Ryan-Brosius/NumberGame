@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 11652213}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.35, y: 0.79, z: 0}
+  m_LocalPosition: {x: -9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -229,10 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &11652219
 Rigidbody2D:
@@ -260,7 +260,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &24814520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -383,7 +383,7 @@ Transform:
   m_GameObject: {fileID: 69477382}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.94, y: 0.38, z: 0}
+  m_LocalPosition: {x: -5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -464,10 +464,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &69477387
 Rigidbody2D:
@@ -495,7 +495,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &101385248
 GameObject:
   m_ObjectHideFlags: 0
@@ -525,7 +525,7 @@ Transform:
   m_GameObject: {fileID: 101385248}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.03, y: -2.29, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -606,10 +606,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &101385253
 Rigidbody2D:
@@ -637,7 +637,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &119884338
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +667,7 @@ Transform:
   m_GameObject: {fileID: 119884338}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 7.7, y: -0.4, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -748,10 +748,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &119884343
 Rigidbody2D:
@@ -779,7 +779,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &122337105
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,7 +809,7 @@ Transform:
   m_GameObject: {fileID: 122337105}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.51, y: -2.58, z: 0}
+  m_LocalPosition: {x: 7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -890,10 +890,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &122337110
 Rigidbody2D:
@@ -921,7 +921,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &191665418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1428,7 +1428,7 @@ Transform:
   m_GameObject: {fileID: 768338694}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.56, y: 2.33, z: 0}
+  m_LocalPosition: {x: 9, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1509,10 +1509,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &768338699
 Rigidbody2D:
@@ -1540,7 +1540,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &999158634
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1660,7 +1660,7 @@ Transform:
   m_GameObject: {fileID: 1226425110}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.01, y: 1.99, z: 0}
+  m_LocalPosition: {x: -7, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1741,10 +1741,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &1226425115
 Rigidbody2D:
@@ -1772,7 +1772,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1 &1281168881
 GameObject:
   m_ObjectHideFlags: 0
@@ -1799,7 +1799,7 @@ Transform:
   m_GameObject: {fileID: 1281168881}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.29, y: 0, z: 0}
+  m_LocalPosition: {x: -10.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 11.42, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1885,7 +1885,7 @@ Transform:
   m_GameObject: {fileID: 1374843978}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.86, y: -3.6, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1966,10 +1966,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &1374843983
 Rigidbody2D:
@@ -1997,7 +1997,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &1379861132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2317,7 +2317,7 @@ Transform:
   m_GameObject: {fileID: 1647132791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.81, z: 0}
+  m_LocalPosition: {x: 0, y: 7, z: 0}
   m_LocalScale: {x: 20.65, y: 2.7408, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2398,7 +2398,7 @@ Transform:
   m_GameObject: {fileID: 1690661774}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.41, y: -4.26, z: 0}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2479,10 +2479,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &1690661779
 Rigidbody2D:
@@ -2510,7 +2510,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &1769720653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2792,7 +2792,7 @@ Transform:
   m_GameObject: {fileID: 1865409651}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.81, z: 0}
+  m_LocalPosition: {x: 0, y: -7, z: 0}
   m_LocalScale: {x: 20.65, y: 2.7408, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2963,7 +2963,7 @@ Transform:
   m_GameObject: {fileID: 1881115612}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.46, y: -1.74, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -3044,10 +3044,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   minFleeSpeed: 1
   maxFleeSpeed: 15
-  detectionRadius: 3
-  wanderSpeed: 1.5
-  minWanderTime: 1
-  maxWanderTime: 3
+  detectionRadius: 4
+  wanderSpeed: 0
+  minWanderTime: 0
+  maxWanderTime: 0
   maxFleeDistance: 50
 --- !u!50 &1881115617
 Rigidbody2D:
@@ -3075,7 +3075,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &1887518680
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3254,7 +3254,7 @@ Transform:
   m_GameObject: {fileID: 2077622141}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.29, y: 0, z: 0}
+  m_LocalPosition: {x: 10.5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 11.42, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3377,7 +3377,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5182788472401057066, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -2.75
       objectReference: {fileID: 0}
     - target: {fileID: 5182788472401057066, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
       propertyPath: m_LocalPosition.z
