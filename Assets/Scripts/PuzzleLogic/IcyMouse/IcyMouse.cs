@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class IcyMouse : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class IcyMouse : MonoBehaviour
     private Collider2D _collider;
     private readonly Collider2D[] _results = new Collider2D[10];
     private ContactFilter2D _filter;
+    private PuzzleLogicController controller;
 
     private void Awake()
     {
@@ -23,6 +25,7 @@ public class IcyMouse : MonoBehaviour
             boundsCamera = Camera.main;
 
         _collider = GetComponent<Collider2D>();
+        controller = FindFirstObjectByType<PuzzleLogicController>();
     }
 
     private void Start()
@@ -83,14 +86,24 @@ public class IcyMouse : MonoBehaviour
 
         int count = _collider.Overlap(_filter, _results);
 
+        ICursorClickable firstClickable = null;
         for (int i = 0; i < count; i++)
         {
-            if (_results[i].TryGetComponent(out ICursorClickable clickable))
+            if (!_results[i].TryGetComponent(out ICursorClickable clickable))
+                continue;
+
+            firstClickable ??= clickable;
+
+            if (controller != null &&
+                _results[i].TryGetComponent(out WorldButton button) &&
+                button.StepIndex == controller.NextExpectedStep)
             {
-                clickable.CursorClick();
-                break;
+                button.CursorClick();
+                return;
             }
         }
+
+        firstClickable?.CursorClick();
     }
 }
 

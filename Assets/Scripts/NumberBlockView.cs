@@ -48,6 +48,19 @@ public class NumberBlockView : MonoBehaviour
         ApplyState();
     }
 
+    public void SetData(NumberBlockData up, NumberBlockData pressed)
+    {
+        upData = up;
+        pressedData = pressed;
+        ApplyState();
+    }
+
+    public void SetSortingOrders(int topOrder, int bottomOrder)
+    {
+        if (renderer2 != null) renderer2.sortingOrder = topOrder;
+        if (renderer1 != null) renderer1.sortingOrder = bottomOrder;
+    }
+
     private void ApplyState()
     {
         NumberBlockData data = isPressed ? pressedData : upData;
