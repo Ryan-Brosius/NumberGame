@@ -18,7 +18,8 @@ public class NumberBlockView : MonoBehaviour
     [SerializeField] private AudioResource clickSound;
     [SerializeField] private AudioResource incorrectSound;
 
-    [SerializeField] private AnimationCurve pressedScaleCurve;
+    [Header("Effects")]
+    [SerializeField] private ParticleSystem starBurst;
 
     
     const float pitchVariation = 0.1f;
@@ -71,11 +72,14 @@ public class NumberBlockView : MonoBehaviour
         Sequence pressedSequence = DOTween.Sequence();
         pressedSequence.Append(transform.DOScale(new Vector3(0.8f, 0.8f, 0.8f), 0.1f))
         .Append(transform.DOScale(new Vector3(1f, 1f, 1f), 0.1f));
+
+        starBurst.Play();
     }
 
     public void PlayIncorrectEffects()
     {
         audioSourceClick.resource = incorrectSound;
+        audioSourceClick.pitch = 1f;
         audioSourceClick.Play();
 
         var shakeSpeed = 0.06f;
@@ -85,5 +89,12 @@ public class NumberBlockView : MonoBehaviour
         .Append(transform.DORotate(new Vector3(0f, 0f, 15f), shakeSpeed))
         .Append(transform.DORotate(new Vector3(0f, 0f, -15f), shakeSpeed))
         .Append(transform.DORotate(new Vector3(0f, 0f, 0f), shakeSpeed));
+    }
+
+    public void PlayResetEffects()
+    {
+        Sequence pressedSequence = DOTween.Sequence();
+        pressedSequence.Append(transform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.25f))
+        .Append(transform.DOScale(new Vector3(1f, 1f, 1f), 0.2f));
     }
 }
