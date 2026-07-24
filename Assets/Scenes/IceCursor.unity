@@ -212,7 +212,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5625, y: 0.5625}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!1 &69477382
 GameObject:
@@ -292,7 +292,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5625, y: 0.5625}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &69477385
 MonoBehaviour:
@@ -800,7 +800,7 @@ PrefabInstance:
     - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 304289995, guid: c770ef772da1cf649bc58e5aeb96907f, type: 3}
+      objectReference: {fileID: -1399967109, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
     - target: {fileID: 8142507741470498792, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: upData
       value: 
@@ -960,7 +960,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5625, y: 0.5625}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &1226425113
 MonoBehaviour:
@@ -1060,7 +1060,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5625, y: 0.5625}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &1374843981
 MonoBehaviour:
@@ -1256,7 +1256,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.5625, y: 0.5625}
+  m_Size: {x: 1.6, y: 1.6}
   m_EdgeRadius: 0
 --- !u!114 &1690661777
 MonoBehaviour:
@@ -1336,7 +1336,7 @@ PrefabInstance:
     - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 67633810, guid: c770ef772da1cf649bc58e5aeb96907f, type: 3}
+      objectReference: {fileID: -1199183065, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
     - target: {fileID: 8142507741470498792, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: upData
       value: 
@@ -1413,7 +1413,7 @@ PrefabInstance:
     - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -587837394, guid: c770ef772da1cf649bc58e5aeb96907f, type: 3}
+      objectReference: {fileID: -1341545420, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
     - target: {fileID: 8142507741470498792, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: upData
       value: 
@@ -1490,7 +1490,7 @@ PrefabInstance:
     - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 291595290, guid: c770ef772da1cf649bc58e5aeb96907f, type: 3}
+      objectReference: {fileID: -948898390, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
     - target: {fileID: 8142507741470498792, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: upData
       value: 
