@@ -2902,9 +2902,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1735483707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bd0d251eb7bd1d48bf727e3a515c0d6, type: 3}
-  m_Name:
-  m_EditorClassIdentifier:
+  m_Script: {fileID: 11500000, guid: e23800a1e4c30014e8e403a1e82b0bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   totalSteps: 10
   resetOnFail: 1
   OnStepCompleted:

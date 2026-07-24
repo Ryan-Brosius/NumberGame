@@ -1,13 +1,28 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
-    private InventoryManager inventoryManager;
+    [SerializeField] private InventoryManager inventoryManager;
 
+    private Image image;
+    public Color selectedColor, notSelectedColor;
     private void Awake()
     {
-        inventoryManager = FindFirstObjectByType<InventoryManager>();
+        image = GetComponent<Image>();
+
+        Deselect();
+    }
+    public void Select()
+    {
+        image.color = selectedColor;
+    }
+    public void Deselect()
+    {
+        image.color = notSelectedColor;
     }
     public void OnDrop(PointerEventData eventData)
     {
