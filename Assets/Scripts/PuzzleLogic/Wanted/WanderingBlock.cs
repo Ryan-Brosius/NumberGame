@@ -52,7 +52,7 @@ public class WanderingBlock : MonoBehaviour
         ghost.name = $"{name}_Ghost";
         ghost.localScale = visuals.localScale;
 
-        // Cosmetic only: strip anything that behaves.
+        // lol destroy the un-needed stuff here
         foreach (var mb in ghost.GetComponentsInChildren<MonoBehaviour>(true))
             Destroy(mb);
         foreach (var col in ghost.GetComponentsInChildren<Collider2D>(true))

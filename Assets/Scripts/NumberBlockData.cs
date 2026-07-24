@@ -6,9 +6,15 @@ using UnityEngine.Audio;
 [CreateAssetMenu(menuName = "Scriptable Object/Number Block")]
 public class NumberBlockData : ScriptableObject
 {
-    //number block data
-    public Sprite Sprite1;
-    public Sprite Sprite2;
+    [Header("Block Info")]
     public int Value;
     public AudioResource ToneSound;
+
+    [Header("Button Up References")]
+    public Sprite ButtonUpSpriteBottom;
+    public Sprite ButtonUpSpriteTop;
+
+    [Header("Button Down References")]
+    public Sprite ButtonDownSpriteBottom;
+    public Sprite ButtonDownSpriteTop;
 }

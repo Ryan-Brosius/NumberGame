@@ -37,8 +37,8 @@ public class NumberBlock : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndD
     public void InitializeItem(NumberBlockData newItem)
     {
         item = newItem;
-        backgroundImage.sprite = newItem.Sprite1;
-        foregroundImage.sprite = newItem.Sprite2;
+        backgroundImage.sprite = newItem.ButtonUpSpriteBottom;
+        foregroundImage.sprite = newItem.ButtonUpSpriteTop;
     }
 
     public void AnimateArcSwapTo(Transform newParent)

@@ -49,8 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 570a1f1d53f38754d865d6bb704aaa0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upData: {fileID: 11400000, guid: 80b008be3fb67e84fbbdc856c2684a60, type: 2}
-  pressedData: {fileID: 11400000, guid: 8641ccc7e89ec6a499c8981b83095a7e, type: 2}
+  BlockData: {fileID: 11400000, guid: 8641ccc7e89ec6a499c8981b83095a7e, type: 2}
   renderer1: {fileID: 3810792942941303340}
   renderer2: {fileID: 1369808697932315565}
   audioSourceClick: {fileID: 6328454703945474675}

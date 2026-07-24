@@ -5,8 +5,7 @@ using DG.Tweening;
 public class NumberBlockView : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] private NumberBlockData upData;
-    [SerializeField] private NumberBlockData pressedData;
+    [SerializeField] private NumberBlockData BlockData;
 
     [Header("Renderers")]
     [SerializeField] private SpriteRenderer renderer1;
@@ -21,7 +20,6 @@ public class NumberBlockView : MonoBehaviour
     [Header("Effects")]
     [SerializeField] private ParticleSystem starBurst;
 
-    
     const float pitchVariation = 0.1f;
 
     private bool isPressed = false;
@@ -30,7 +28,7 @@ public class NumberBlockView : MonoBehaviour
         get { return isPressed; }
         set { SetState(value); }
     }
-    public int Value => upData != null ? upData.Value : 0;
+    public int Value => BlockData != null ? BlockData.Value : 0;
 
     private void OnValidate()
     {
@@ -50,8 +48,7 @@ public class NumberBlockView : MonoBehaviour
 
     public void SetData(NumberBlockData up, NumberBlockData pressed)
     {
-        upData = up;
-        pressedData = pressed;
+        BlockData = up;
         ApplyState();
     }
 
@@ -63,16 +60,25 @@ public class NumberBlockView : MonoBehaviour
 
     private void ApplyState()
     {
-        NumberBlockData data = isPressed ? pressedData : upData;
+        if (isPressed)
+        {
+            if (renderer1 != null)
+                renderer1.sprite = BlockData.ButtonDownSpriteBottom != null ? BlockData.ButtonDownSpriteBottom : null;
 
-        if (renderer1 != null)
-            renderer1.sprite = data != null ? data.Sprite1 : null;
+            if (renderer2 != null)
+                renderer2.sprite = BlockData.ButtonDownSpriteTop != null ? BlockData.ButtonDownSpriteTop : null;
+        }
+        else
+        {
+            if (renderer1 != null)
+                renderer1.sprite = BlockData.ButtonUpSpriteBottom != null ? BlockData.ButtonUpSpriteBottom : null;
 
-        if (renderer2 != null)
-            renderer2.sprite = data != null ? data.Sprite2 : null;
+            if (renderer2 != null)
+                renderer2.sprite = BlockData.ButtonUpSpriteTop != null ? BlockData.ButtonUpSpriteTop : null;
+        }
 
         if (audioSourceTone != null)
-            audioSourceTone.resource = data != null ? data.ToneSound : null;
+            audioSourceTone.resource = BlockData != null ? BlockData.ToneSound : null;
     }
 
     public void PlayPressedEffects()

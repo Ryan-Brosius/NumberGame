@@ -12,7 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a507179dfb9e49e4cb7af77d6c88b347, type: 3}
   m_Name: 1
   m_EditorClassIdentifier: 
-  Sprite1: {fileID: 1275055851, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
-  Sprite2: {fileID: 6588566178529649908, guid: dc130bb866fd6854b98f75f9f2d12291, type: 3}
   Value: 1
   ToneSound: {fileID: 8300000, guid: 903be9242a2358a4cb45f5cf3e31b19d, type: 3}
+  ButtonUpSpriteBottom: {fileID: -1759575157, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
+  ButtonUpSpriteTop: {fileID: 6588566178529649908, guid: dc130bb866fd6854b98f75f9f2d12291, type: 3}
+  ButtonDownSpriteBottom: {fileID: 1275055851, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
+  ButtonDownSpriteTop: {fileID: 6588566178529649908, guid: dc130bb866fd6854b98f75f9f2d12291, type: 3}
