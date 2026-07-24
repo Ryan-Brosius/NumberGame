@@ -17,7 +17,7 @@ public class cheeringManager : MonoBehaviour
     void Start()
     {
         additionDelay = 0.05f;
-        PlayCheerSfx();
+        //PlayCheerSfx();
     }
 
     void Update()
