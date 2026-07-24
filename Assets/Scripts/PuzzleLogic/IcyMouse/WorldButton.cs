@@ -35,6 +35,7 @@ public class WorldButton : MonoBehaviour, ICursorClickable
         if (correct)
         {
             blockView.IsPressed = true;
+            blockView.PlaySfx();
             isClicked = true;
         }
     }

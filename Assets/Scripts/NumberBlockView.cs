@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class NumberBlockView : MonoBehaviour
 {
@@ -9,6 +10,12 @@ public class NumberBlockView : MonoBehaviour
     [Header("Renderers")]
     [SerializeField] private SpriteRenderer renderer1;
     [SerializeField] private SpriteRenderer renderer2;
+
+    [Header("Audio Sources")]
+    [SerializeField] private AudioSource audioSourceClick;
+    [SerializeField] private AudioSource audioSourceTone;
+
+    const float pitchVariation = 0.1f;
 
     private bool isPressed = false;
     public bool IsPressed
@@ -43,5 +50,16 @@ public class NumberBlockView : MonoBehaviour
 
         if (renderer2 != null)
             renderer2.sprite = data != null ? data.Sprite2 : null;
+
+        if (audioSourceTone != null)
+            audioSourceTone.resource = data != null ? data.ToneSound : null;
+    }
+
+    public void PlaySfx()
+    {
+        // randomize pitch
+        audioSourceClick.pitch = Random.Range(1.0f - pitchVariation, 1.0f + pitchVariation);
+        audioSourceClick.Play();
+        audioSourceTone.Play();
     }
 }
