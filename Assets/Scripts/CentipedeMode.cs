@@ -21,14 +21,12 @@ public class CentipedeMode : MonoBehaviour
     {
         canvasRectTransform = GetComponentInParent<Canvas>()
             .GetComponent<RectTransform>();
-
         direction = Random.insideUnitCircle.normalized;
         if (direction.magnitude < 0.1f)
         {
             direction = Vector2.right;
         }
-
-        baseMoveSpeed = Random.Range(100f, 577f);
+        baseMoveSpeed = 430f;
         moveSpeed = baseMoveSpeed;
         int totalHistoryLength = Mathf.CeilToInt(
             (segmentSpacing * (segments.Length - 1)) / historyResolution
