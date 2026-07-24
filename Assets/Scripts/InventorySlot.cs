@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour, IDropHandler
 {
+    [SerializeField] private InventoryManager inventoryManager;
+
     private Image image;
     public Color selectedColor, notSelectedColor;
     private void Awake()
@@ -24,22 +26,26 @@ public class InventorySlot : MonoBehaviour, IDropHandler
     }
     public void OnDrop(PointerEventData eventData)
     {
-        var droppedItem = eventData.pointerDrag.GetComponent<InventoryItem>();
+        var droppedItem = eventData.pointerDrag.GetComponent<NumberBlock>();
 
         if (transform.childCount == 0)
         {
             droppedItem.parentAfterDrag = transform;
+            inventoryManager.CheckWinCondition();
             return;
         }
 
-        var existingItem = GetComponentInChildren<InventoryItem>();
+        var existingItem = GetComponentInChildren<NumberBlock>();
         if (existingItem == null || existingItem == droppedItem)
         {
             droppedItem.parentAfterDrag = transform;
+            inventoryManager.CheckWinCondition();
             return;
         }
 
-        existingItem.transform.SetParent(droppedItem.parentAfterDrag);
+        var originSlot = droppedItem.parentAfterDrag;
+        existingItem.AnimateArcSwapTo(originSlot);
         droppedItem.parentAfterDrag = transform;
+        inventoryManager.CheckWinCondition();
     }
 }
