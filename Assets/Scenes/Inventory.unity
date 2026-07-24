@@ -2178,9 +2178,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   items:
+  - {fileID: 11400000, guid: 9e7ee817d5a348b47a7b1322612cee58, type: 2}
   - {fileID: 11400000, guid: 80b008be3fb67e84fbbdc856c2684a60, type: 2}
   - {fileID: 11400000, guid: 2aa8e8ed8447dfb46b02d9c2854d5a88, type: 2}
   - {fileID: 11400000, guid: c6dde26cfc7dc33439e3f77d8a5e80e1, type: 2}
+  - {fileID: 11400000, guid: 8f563e0af076fe54b9d4fe1203aab23a, type: 2}
+  - {fileID: 11400000, guid: 361f4f3b1b600a145b91251e068dba79, type: 2}
+  - {fileID: 11400000, guid: bfae022838cb6af4f86e5ca1baaadb64, type: 2}
+  - {fileID: 11400000, guid: 962617796d22162448106dcbcfed0003, type: 2}
+  - {fileID: 11400000, guid: 71705b50c724ead40a0708e97bbf2ca0, type: 2}
+  - {fileID: 11400000, guid: b4917f3e33b6ea54ea39b67057b68505, type: 2}
+  - {fileID: 11400000, guid: c12d8bfd698e87d45a1b24e5c847f9ff, type: 2}
   inventoryItemPrefab: {fileID: 6176975119101509743, guid: 6460e97f444924d48a0c060ca4325df8, type: 3}
   inventorySlots:
   - {fileID: 1923680570}
