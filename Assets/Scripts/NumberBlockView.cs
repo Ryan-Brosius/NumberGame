@@ -10,7 +10,12 @@ public class NumberBlockView : MonoBehaviour
     [SerializeField] private SpriteRenderer renderer1;
     [SerializeField] private SpriteRenderer renderer2;
 
-    public bool IsPressed = false;
+    private bool isPressed = false;
+    public bool IsPressed
+    {
+        get { return isPressed; }
+        set { SetState(value); }
+    }
     public int Value => upData != null ? upData.Value : 0;
 
     private void OnValidate()
@@ -23,20 +28,15 @@ public class NumberBlockView : MonoBehaviour
         ApplyState();
     }
 
-    public void SetPressed(bool pressed)
+    private void SetState(bool isPressed)
     {
-        SetState(IsPressed);
-    }
-
-    public void SetState(bool isPressed)
-    {
-        IsPressed = isPressed;
+        this.isPressed = isPressed;
         ApplyState();
     }
 
     private void ApplyState()
     {
-        NumberBlockData data = IsPressed ? pressedData : upData;
+        NumberBlockData data = isPressed ? pressedData : upData;
 
         if (renderer1 != null)
             renderer1.sprite = data != null ? data.Sprite1 : null;
