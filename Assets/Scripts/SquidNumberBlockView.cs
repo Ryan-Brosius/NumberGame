@@ -2,10 +2,13 @@ using UnityEngine;
 
 public class SquidNumberBlockView : NumberBlockView
 {
+
     public override void ApplyState()
     {
         if (!isPressed)
         {
+            starBurst.Clear();
+
             renderer1.gameObject.SetActive(true);
             renderer2.gameObject.SetActive(true);
         }
