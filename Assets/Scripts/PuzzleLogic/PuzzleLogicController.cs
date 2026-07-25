@@ -17,7 +17,7 @@ public class PuzzleLogicController : MonoBehaviour
     public UnityEvent OnSequenceReset;
 
     public int TotalSteps => totalSteps;
-    public int NextExpectedStep { get; private set; } = 1;
+    public int NextExpectedStep { get; private set; } = 10;
     public bool IsComplete { get; private set; }
 
     public bool ReportAction(int stepIndex)
@@ -34,9 +34,9 @@ public class PuzzleLogicController : MonoBehaviour
         }
 
         OnStepCompleted?.Invoke(stepIndex);
-        NextExpectedStep++;
+        NextExpectedStep--;
 
-        if (NextExpectedStep > totalSteps)
+        if (NextExpectedStep == 0)
         {
             IsComplete = true;
             OnSequenceCompleted?.Invoke();
@@ -48,7 +48,7 @@ public class PuzzleLogicController : MonoBehaviour
 
     public void ResetSequence()
     {
-        NextExpectedStep = 1;
+        NextExpectedStep = 10;
         IsComplete = false;
         OnSequenceReset?.Invoke();
     }
