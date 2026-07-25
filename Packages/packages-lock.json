@@ -302,13 +302,6 @@
       },
       "url": "https://packages.unity.com"
     },
-    "com.wooshii.foldericons": {
-      "version": "https://github.com/WooshiiDev/Unity-Folder-Icons.git",
-      "depth": 0,
-      "source": "git",
-      "dependencies": {},
-      "hash": "201a18f355d3e9bc49b337e7c93423743ab42b2f"
-    },
     "com.unity.modules.accessibility": {
       "version": "1.0.0",
       "depth": 0,
