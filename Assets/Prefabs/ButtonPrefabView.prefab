@@ -57,6 +57,7 @@ MonoBehaviour:
   clickSound: {fileID: 8300000, guid: b8c56a93c18782445b371f72413f96f3, type: 3}
   incorrectSound: {fileID: 8300000, guid: f6c126214785cc7409cdd970ebc99eda, type: 3}
   starBurst: {fileID: 5120445198412452450}
+  isPressed: 0
 --- !u!1 &5200507709117229215
 GameObject:
   m_ObjectHideFlags: 0
@@ -316,7 +317,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 903be9242a2358a4cb45f5cf3e31b19d, type: 3}
+  m_Resource: {fileID: 8300000, guid: 2ea9d46e5f42a94449568ff1ee54d8ad, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
