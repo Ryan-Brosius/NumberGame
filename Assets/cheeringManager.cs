@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.Audio;
 
-public class cheeringManager : MonoBehaviour
+public class CheeringManager : MonoBehaviour
 {
     [SerializeField] private List<AudioResource> mainCheers;
     [SerializeField] private List<AudioResource> cheerAdditions;
@@ -14,7 +14,7 @@ public class cheeringManager : MonoBehaviour
     private bool additionPlayed = false;
     private bool isPlaying = false;
 
-    private static cheeringManager instance = null;
+    private static CheeringManager instance = null;
 
     private void Awake()
     {
@@ -48,7 +48,12 @@ public class cheeringManager : MonoBehaviour
         }
     }
     
-    public void PlayCheerSfx()
+    public static void PlayCheerSfx()
+    {
+        instance.CheerSfx();
+    }
+
+    public void CheerSfx()
     {
         isPlaying = true;
 
@@ -56,7 +61,8 @@ public class cheeringManager : MonoBehaviour
         var rand = Random.value;
         var cheerSound = mainCheers[0];
 
-        if (rand < 0.35f){
+        if (rand < 0.35f)
+        {
             cheerSound = mainCheers[0];
         }
         else if (rand < 0.7f)

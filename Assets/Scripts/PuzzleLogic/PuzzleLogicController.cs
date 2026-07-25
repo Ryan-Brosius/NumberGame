@@ -55,6 +55,8 @@ public class PuzzleLogicController : MonoBehaviour
 
     public IEnumerator LevelComplete()
     {
+
+        CheeringManager.PlayCheerSfx();
         yield return new WaitForSeconds(2f);
 
         MainMenuManager.OpenLevelSelectOnNextLoad();
