@@ -16,15 +16,15 @@ public class TurretCode : MonoBehaviour
     void Update()
     {
         Vector3 direction = cursorTransform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
         transform.rotation = Quaternion.Euler(0f, 0f, angle);
         if (direction.x < 0)
         {
-            transform.localScale = new Vector3(1.4f, -1.4f, 1.4f);
+            //transform.localScale = new Vector3(1.4f, -1.4f, 1.4f);
         }
         else
         {
-            transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
+            //transform.localScale = new Vector3(1.4f, 1.4f, 1.4f);
         }
         if (Input.GetMouseButtonDown(0))
         {
@@ -55,7 +55,7 @@ public class TurretCode : MonoBehaviour
         Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
         if (rb != null)
         {
-            rb.linearVelocity = firePoint.right * bulletSpeed;
+            rb.linearVelocity = firePoint.up * bulletSpeed;
         }
         Destroy(bullet, bulletLifetime);
     }

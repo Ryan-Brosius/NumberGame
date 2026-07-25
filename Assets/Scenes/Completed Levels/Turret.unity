@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &11652219
 Rigidbody2D:
   serializedVersion: 5
@@ -422,6 +423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &69477386
 Rigidbody2D:
   serializedVersion: 5
@@ -542,6 +544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &101385252
 Rigidbody2D:
   serializedVersion: 5
@@ -662,6 +665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &119884342
 Rigidbody2D:
   serializedVersion: 5
@@ -782,6 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &122337109
 Rigidbody2D:
   serializedVersion: 5
@@ -889,7 +894,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6628414004274166170, guid: 342d787d22786aa44aa226b481347327, type: 3}
+  m_Sprite: {fileID: 6219008580301899996, guid: b77fabc882034394ca665ddfc0c621b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -909,8 +914,8 @@ Transform:
   m_GameObject: {fileID: 185007070}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.49, z: 0}
-  m_LocalScale: {x: 1.423746, y: 1.423746, z: 1.423746}
+  m_LocalPosition: {x: 0, y: -3.4483333, z: 0.16666667}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 861368065}
@@ -1353,6 +1358,93 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1373968452523284718, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
   m_PrefabInstance: {fileID: 447589398}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &483690417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483690419}
+  - component: {fileID: 483690418}
+  m_Layer: 0
+  m_Name: TurretBase
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!212 &483690418
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483690417}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 2323917800338813707, guid: b77fabc882034394ca665ddfc0c621b5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 4.1875, y: 3}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &483690419
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 483690417}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -3.7500002, z: -0.125}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &490106266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,7 +1580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &600265977
 Transform:
   m_ObjectHideFlags: 0
@@ -1725,6 +1817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &768338698
 Rigidbody2D:
   serializedVersion: 5
@@ -1952,7 +2045,7 @@ Transform:
   m_GameObject: {fileID: 861368064}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.12, y: 0.48, z: 0}
+  m_LocalPosition: {x: 0, y: 2.605, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2219,6 +2312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &1226425114
 Rigidbody2D:
   serializedVersion: 5
@@ -2344,6 +2438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &1374843982
 Rigidbody2D:
   serializedVersion: 5
@@ -2871,6 +2966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &1690661778
 Rigidbody2D:
   serializedVersion: 5
@@ -3336,6 +3432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DinoLevel: 0
 --- !u!50 &1881115616
 Rigidbody2D:
   serializedVersion: 5
@@ -3565,3 +3662,4 @@ SceneRoots:
   - {fileID: 490106267}
   - {fileID: 1499917046}
   - {fileID: 185007073}
+  - {fileID: 483690419}
