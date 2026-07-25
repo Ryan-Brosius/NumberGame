@@ -17,7 +17,11 @@ public class MainMenuManager : MonoBehaviour
 
     private void Start()
     {
-        if (openLevelSelectOnLoad)
+        if (GameProgress.LastResult != GameProgress.Result.None)
+        {
+            ShowGameLoop();
+        }
+        else if (openLevelSelectOnLoad)
         {
             openLevelSelectOnLoad = false;
             ShowLevelSelect();
@@ -40,14 +44,18 @@ public class MainMenuManager : MonoBehaviour
         levelSelectPanel.SetActive(true);
     }
 
+    public void ShowGameLoop()
+    {
+        mainMenuPanel.SetActive(false);
+        levelSelectPanel.SetActive(false);
+    }
+
     public void OnStartClicked()
     {
         ShowLevelSelect();
-        SoundManager.PlaySound(selectSound1);
     }
 
     public void OnEndlessClicked()
     {
-        SoundManager.PlaySound(selectSound1);
     }
 }

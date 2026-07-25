@@ -32,6 +32,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Completed Levels/Wanted.unity
     guid: 985c490c93070cf4b8f359904a370363
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/CarrotHorse.unity
+    guid: 0426c19cb3cc50a47810bd128e2adddd
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Goblins.unity
+    guid: 6b2278b7de8ff7c428d1440a0af2b26e
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Golf.unity
+    guid: bc92b81b4c6e33a41b022943c04b81fc
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/MemoryCards.unity
+    guid: a16f5e34c6146a749b44de56ef6aa06c
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/NumberMaze.unity
+    guid: a4b65ca95bb4e1f47b1df4a228499362
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

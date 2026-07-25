@@ -55,7 +55,7 @@ public class PuzzleLogicController : MonoBehaviour
 
     public IEnumerator LevelComplete()
     {
-
+        GameProgress.LastResult = GameProgress.Result.Completed;
         CheeringManager.PlayCheerSfx();
         yield return new WaitForSeconds(2f);
 
