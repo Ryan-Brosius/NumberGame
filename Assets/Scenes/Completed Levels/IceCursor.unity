@@ -166,7 +166,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 1
   blockView: {fileID: 0}
 --- !u!61 &11652217
 BoxCollider2D:
@@ -397,7 +396,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 3
   blockView: {fileID: 0}
 --- !u!1 &101385248
 GameObject:
@@ -492,7 +490,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 6
   blockView: {fileID: 0}
 --- !u!1 &119884338
 GameObject:
@@ -587,7 +584,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 8
   blockView: {fileID: 0}
 --- !u!1 &122337105
 GameObject:
@@ -682,7 +678,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 9
   blockView: {fileID: 0}
 --- !u!4 &256501538 stripped
 Transform:
@@ -752,7 +747,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5.625
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -922,7 +917,7 @@ SpriteRenderer:
   m_Size: {x: 0.375, y: 0.4375}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &394051165
@@ -1263,6 +1258,22 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: a6f7b8b1aa655fd4fb51bc5bb682d2c3, type: 3}
+    - target: {fileID: 7750859810177503135, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5529412
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750859810177503135, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5764706
+      objectReference: {fileID: 0}
+    - target: {fileID: 7750859810177503135, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: m_Color.r
+      value: 0.30588236
+      objectReference: {fileID: 0}
+    - target: {fileID: 8778860700992302072, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1297385226, guid: 8cb6719d93f2b3c47b85066d02a0b85a, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1361,7 +1372,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 10
   blockView: {fileID: 0}
 --- !u!1001 &999158634
 PrefabInstance:
@@ -1609,7 +1619,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 2
   blockView: {fileID: 0}
 --- !u!4 &1313672994 stripped
 Transform:
@@ -1709,7 +1718,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 5
   blockView: {fileID: 0}
 --- !u!1001 &1379861132
 PrefabInstance:
@@ -2085,7 +2093,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 4
   blockView: {fileID: 0}
 --- !u!1001 &1769720653
 PrefabInstance:
@@ -2525,7 +2532,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  stepIndex: 7
   blockView: {fileID: 0}
 --- !u!1001 &1887518680
 PrefabInstance:
