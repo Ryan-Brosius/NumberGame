@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using DG.Tweening;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class SquidMode : MonoBehaviour

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 using System.Collections;
 
 public class GoblinCode : MonoBehaviour
@@ -7,80 +6,81 @@ public class GoblinCode : MonoBehaviour
     [Header("movement")]
     [SerializeField] private float moveSpeed = 100f;
     [SerializeField] private float wanderRadius = 15f;
-    [SerializeField] private float stoppingDistance = 30f;
-    [Header("button interaction")]
-    [SerializeField] private float buttonWaitTime = 2f;
+    [Header("cursor")]
+    [SerializeField] private GameObject cursorObject;
+    [Header("animator")]
+    [SerializeField] private Animator animator;
+    [Header("number block int")]
+    [SerializeField] private float contactTimeRequired = 1f;
+    [Header("puzzle")]
+    [SerializeField] private PuzzleLogicController puzzleController;
     [Header("retreat speed")]
     [SerializeField] private float retreatSpeed = 200f;
-    [Header("pain squash & stretch (definitely optional)")]
+    [Header("return cooldown")]
+    [SerializeField] private float returnCooldown = 1f;
+    [Header("pain squash & stretch")]
     [SerializeField] private float squashAmount = 0.7f;
     [SerializeField] private float stretchAmount = 1.3f;
     [SerializeField] private float painDuration = 0.12f;
     [SerializeField] private float recoveryDuration = 0.2f;
     private RectTransform rectTransform;
-    private RectTransform canvasRectTransform;
     private Vector2 startingPosition;
     private Vector2 wanderTarget;
-    private Button targetButton;
-    private Button ownButton;
     private Vector3 originalScale;
-    private float waitTimer = 0f;
     private Coroutine painCoroutine;
-
+    private NumberBlockView targetBlock;
+    private float contactTimer;
+    private bool cursorInside;
+    private bool returnCooldownActive;
     private enum GoblinState
     {
         Wandering,
-        WalkingToButton,
-        WaitingAtButton,
+        GoingToPressedBlock,
         Retreating
     }
 
     private GoblinState currentState;
-
-    void Start()
+    private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        Canvas canvas = GetComponentInParent<Canvas>();
-        if (canvas != null)
-        {
-            canvasRectTransform = canvas.GetComponent<RectTransform>();
-        }
         startingPosition = rectTransform.anchoredPosition;
         originalScale = rectTransform.localScale;
-        ownButton = GetComponent<Button>();
-
-        if (ownButton != null)
+        if (animator == null)
         {
-            ownButton.onClick.AddListener(RetreatToStartingPosition);
+            animator = GetComponent<Animator>();
         }
+        puzzleController = FindAnyObjectByType<PuzzleLogicController>();
         ChooseNewWanderTarget();
         currentState = GoblinState.Wandering;
+        if (animator != null)
+        {
+            animator.SetBool("ishurt", false);
+        }
     }
 
-    void Update()
+    private void Update()
     {
         if (rectTransform == null)
         {
             return;
         }
-        if (currentState != GoblinState.Retreating)
+        if (returnCooldownActive)
         {
-            if (targetButton == null)
-            {
-                FindInactiveButton();
-            }
+            return;
         }
-
+        if (cursorInside && Input.GetMouseButtonDown(0))
+        {
+            RetreatToStartingPosition();
+            return;
+        }
         switch (currentState)
         {
             case GoblinState.Wandering:
                 Wander();
+                FindPressedBlock();
                 break;
-            case GoblinState.WalkingToButton:
-                WalkToButton();
-                break;
-            case GoblinState.WaitingAtButton:
-                WaitAtButton();
+            case GoblinState.GoingToPressedBlock:
+                GoToPressedBlock();
                 break;
             case GoblinState.Retreating:
                 Retreat();
@@ -90,11 +90,6 @@ public class GoblinCode : MonoBehaviour
 
     private void Wander()
     {
-        if (targetButton != null)
-        {
-            currentState = GoblinState.WalkingToButton;
-            return;
-        }
         Vector2 currentPosition = rectTransform.anchoredPosition;
         Vector2 newPosition = Vector2.MoveTowards(
             currentPosition,
@@ -108,80 +103,91 @@ public class GoblinCode : MonoBehaviour
         }
     }
 
-    private void WalkToButton()
+    private void FindPressedBlock()
     {
-        if (targetButton == null)
-        {
-            currentState = GoblinState.Wandering;
-            ChooseNewWanderTarget();
-            return;
-        }
-        RectTransform buttonRect =
-            targetButton.GetComponent<RectTransform>();
-        if (buttonRect == null)
-        {
-            targetButton = null;
-            currentState = GoblinState.Wandering;
-            return;
-        }
-
-        Vector2 targetPosition = buttonRect.anchoredPosition;
-        Vector2 currentPosition = rectTransform.anchoredPosition;
-
-        float distance = Vector2.Distance(
-            currentPosition,
-            targetPosition
+        NumberBlockView[] blocks = FindObjectsByType<NumberBlockView>(
+            FindObjectsSortMode.None
         );
-        if (distance <= stoppingDistance)
+        foreach (NumberBlockView block in blocks)
         {
-            waitTimer = 0f;
-            currentState = GoblinState.WaitingAtButton;
+            if (block != null && block.IsPressed)
+            {
+                targetBlock = block;
+                contactTimer = 0f;
+                currentState = GoblinState.GoingToPressedBlock;
+                return;
+            }
+        }
+    }
+
+    private void GoToPressedBlock()
+    {
+        if (targetBlock == null)
+        {
+            targetBlock = null;
+            contactTimer = 0f;
+            currentState = GoblinState.Wandering;
             return;
         }
-        rectTransform.anchoredPosition = Vector2.MoveTowards(
+
+        if (!targetBlock.IsPressed)
+        {
+            targetBlock = null;
+            contactTimer = 0f;
+            currentState = GoblinState.Wandering;
+            return;
+        }
+
+        Vector2 targetPosition = targetBlock.transform.position;
+        Vector2 currentPosition = rectTransform.position;
+
+        Vector2 newPosition = Vector2.MoveTowards(
             currentPosition,
             targetPosition,
             moveSpeed * Time.deltaTime
         );
+
+        rectTransform.position = newPosition;
+
+        float distance = Vector2.Distance(
+            newPosition,
+            targetPosition
+        );
+
+        if (distance < 1f)
+        {
+            contactTimer += Time.deltaTime;
+
+            if (contactTimer >= contactTimeRequired)
+            {
+                UnpressTargetBlock();
+            }
+        }
+        else
+        {
+            contactTimer = 0f;
+        }
     }
 
-    private void WaitAtButton()
+    private void UnpressTargetBlock()
     {
-        if (targetButton == null)
+        if (targetBlock == null)
         {
-            currentState = GoblinState.Wandering;
             return;
         }
 
-        RectTransform buttonRect =
-            targetButton.GetComponent<RectTransform>();
-        if (buttonRect == null)
-        {
-            targetButton = null;
-            currentState = GoblinState.Wandering;
-            return;
-        }
-        float distance = Vector2.Distance(
-            rectTransform.anchoredPosition,
-            buttonRect.anchoredPosition
-        );
-        if (distance > stoppingDistance)
-        {
-            waitTimer = 0f;
-            currentState = GoblinState.WalkingToButton;
-            return;
-        }
-        waitTimer += Time.deltaTime;
-        if (waitTimer >= buttonWaitTime)
-        {
-            ClickButton();
+        targetBlock.IsPressed = false;
 
-            targetButton = null;
-            waitTimer = 0f;
-
-            ChooseNewWanderTarget();
-            currentState = GoblinState.Wandering;
+        if (puzzleController != null)
+        {
+            puzzleController.ResetSequence();
         }
+
+        targetBlock = null;
+        contactTimer = 0f;
+
+        ChooseNewWanderTarget();
+        currentState = GoblinState.Wandering;
     }
 
     private void Retreat()
@@ -191,60 +197,46 @@ public class GoblinCode : MonoBehaviour
             startingPosition,
             retreatSpeed * Time.deltaTime
         );
+
         if (Vector2.Distance(
             rectTransform.anchoredPosition,
             startingPosition
         ) < 0.1f)
         {
             rectTransform.anchoredPosition = startingPosition;
-            targetButton = null;
-            waitTimer = 0f;
+            StartCoroutine(ReturnCooldown());
             ChooseNewWanderTarget();
             currentState = GoblinState.Wandering;
         }
     }
 
-    private void FindInactiveButton()
+    private IEnumerator ReturnCooldown()
     {
-        Button[] buttons = FindObjectsByType<Button>(
-            FindObjectsInactive.Include,
-            FindObjectsSortMode.None
-        );
-
-        foreach (Button button in buttons)
+        returnCooldownActive = true;
+        if (animator != null)
         {
-            if (button == null)
-            {
-                continue;
-            }
-            if (button == ownButton)
-            {
-                continue;
-            }
-            if (!button.gameObject.activeSelf)
-            {
-                targetButton = button;
-                currentState = GoblinState.WalkingToButton;
-                return;
-            }
+            animator.SetBool("ishurt", true);
+        }
+        yield return new WaitForSeconds(returnCooldown);
+        returnCooldownActive = false;
+        if (animator != null)
+        {
+            animator.SetBool("ishurt", false);
         }
     }
-
-    private void ClickButton()
+    private void RetreatToStartingPosition()
     {
-        if (targetButton == null)
+        if (currentState == GoblinState.Retreating)
         {
             return;
         }
-        targetButton.gameObject.SetActive(true);
-        targetButton.onClick.Invoke();
-    }
-
-    private void RetreatToStartingPosition()
-    {
+        targetBlock = null;
+        contactTimer = 0f;
+        if (animator != null)
+        {
+            animator.SetBool("ishurt", true);
+        }
         PlayPainAnimation();
-        targetButton = null;
-        waitTimer = 0f;
         currentState = GoblinState.Retreating;
     }
 
@@ -264,7 +256,6 @@ public class GoblinCode : MonoBehaviour
             originalScale.y * squashAmount,
             originalScale.z
         );
-
         Vector3 stretchScale = new Vector3(
             originalScale.x * squashAmount,
             originalScale.y * stretchAmount,
@@ -274,19 +265,24 @@ public class GoblinCode : MonoBehaviour
         while (timer < painDuration)
         {
             timer += Time.deltaTime;
+
             float t = timer / painDuration;
+
             rectTransform.localScale = Vector3.Lerp(
                 originalScale,
                 squashScale,
                 t
             );
+
             yield return null;
         }
         timer = 0f;
         while (timer < painDuration)
         {
             timer += Time.deltaTime;
+
             float t = timer / painDuration;
+
             rectTransform.localScale = Vector3.Lerp(
                 squashScale,
                 stretchScale,
@@ -301,11 +297,13 @@ public class GoblinCode : MonoBehaviour
 
             float t = timer / recoveryDuration;
             t = Mathf.SmoothStep(0f, 1f, t);
+
             rectTransform.localScale = Vector3.Lerp(
                 stretchScale,
                 originalScale,
                 t
             );
+
             yield return null;
         }
         rectTransform.localScale = originalScale;
@@ -326,13 +324,29 @@ public class GoblinCode : MonoBehaviour
                        new Vector2(randomX, randomY);
     }
 
-    private void OnDestroy()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (ownButton != null)
+        if (cursorObject == null)
         {
-            ownButton.onClick.RemoveListener(
-                RetreatToStartingPosition
-            );
+            return;
+        }
+
+        if (other.gameObject == cursorObject)
+        {
+            cursorInside = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (cursorObject == null)
+        {
+            return;
+        }
+
+        if (other.gameObject == cursorObject)
+        {
+            cursorInside = false;
         }
     }
 }
