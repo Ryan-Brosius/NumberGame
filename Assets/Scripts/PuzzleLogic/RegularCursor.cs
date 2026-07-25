@@ -9,6 +9,9 @@ public class RegularCursor : MonoBehaviour
     [SerializeField] private Camera boundsCamera;
     [SerializeField] private PuzzleLogicController controller;
 
+    [Header("Effects")]
+    [SerializeField] private ParticleSystem clickParticles;
+
     private BoxCollider2D _collider;
     private readonly Collider2D[] _results = new Collider2D[10];
     private ContactFilter2D _filter;
@@ -68,6 +71,8 @@ public class RegularCursor : MonoBehaviour
             return;
 
         int count = _collider.Overlap(_filter, _results);
+
+        clickParticles.Play();
 
         ICursorClickable firstClickable = null;
         for (int i = 0; i < count; i++)
