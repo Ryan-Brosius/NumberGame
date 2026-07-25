@@ -459,8 +459,8 @@ TextureImporter:
       name: level_icons_15
       rect:
         serializedVersion: 2
-        x: 64
-        y: 1
+        x: 67
+        y: 0
         width: 27
         height: 27
       alignment: 9
@@ -495,6 +495,28 @@ TextureImporter:
       bones: []
       spriteID: 2279b05f9ff774bb0800000000000000
       internalID: -4951848553735809246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_icons_14
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 96
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a69bfe0853fa18f4fbd7c6f8acb70b91
+      internalID: 7113213640489301136
       vertices: []
       indices: 
       edges: []
