@@ -3,7 +3,7 @@ using UnityEngine;
 public class SquidButton : MonoBehaviour, ICursorClickable
 {
     [SerializeField] private PuzzleLogicController controller;
-    [SerializeField] private NumberBlockView blockView;
+    [SerializeField] private SquidNumberBlockView blockView;
 
     private bool isClicked = false;
     public int StepIndex => blockView.Value;
@@ -11,7 +11,7 @@ public class SquidButton : MonoBehaviour, ICursorClickable
     private void Awake()
     {
         if (blockView == null)
-            blockView = GetComponentInChildren<NumberBlockView>();
+            blockView = GetComponentInChildren<SquidNumberBlockView>();
     }
 
     private void Start()
@@ -39,12 +39,14 @@ public class SquidButton : MonoBehaviour, ICursorClickable
         if (correct)
         {
             isClicked = true;
-            gameObject.SetActive(false);
+            blockView.PlayPressedEffects();
+            blockView.IsPressed = true;
+            
+            //gameObject.SetActive(false);
         }
         else
         {
-            // Incorrect sound later
-            //blockView.PlayIncorrectEffects();
+            blockView.PlayIncorrectEffects();
         }
     }
 }

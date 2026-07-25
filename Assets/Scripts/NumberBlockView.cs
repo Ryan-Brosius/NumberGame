@@ -5,24 +5,25 @@ using DG.Tweening;
 public class NumberBlockView : MonoBehaviour
 {
     [Header("Data")]
-    [SerializeField] private NumberBlockData BlockData;
+    public NumberBlockData BlockData;
 
     [Header("Renderers")]
-    [SerializeField] private SpriteRenderer renderer1;
-    [SerializeField] private SpriteRenderer renderer2;
+    public SpriteRenderer renderer1;
+    public SpriteRenderer renderer2;
 
     [Header("Audio")]
-    [SerializeField] private AudioSource audioSourceClick;
-    [SerializeField] private AudioSource audioSourceTone;
-    [SerializeField] private AudioResource clickSound;
-    [SerializeField] private AudioResource incorrectSound;
+    public AudioSource audioSourceClick;
+    public AudioSource audioSourceTone;
+    public AudioResource clickSound;
+    public AudioResource incorrectSound;
 
     [Header("Effects")]
-    [SerializeField] private ParticleSystem starBurst;
+    public ParticleSystem starBurst;
 
     const float pitchVariation = 0.1f;
 
-    private bool isPressed = false;
+    [HideInInspector]
+    public bool isPressed = false;
     public bool IsPressed
     {
         get { return isPressed; }
@@ -58,7 +59,7 @@ public class NumberBlockView : MonoBehaviour
         if (renderer1 != null) renderer1.sortingOrder = bottomOrder;
     }
 
-    private void ApplyState()
+    public virtual void ApplyState()
     {
         if (isPressed)
         {
@@ -81,7 +82,7 @@ public class NumberBlockView : MonoBehaviour
             audioSourceTone.resource = BlockData != null ? BlockData.ToneSound : null;
     }
 
-    public void PlayPressedEffects()
+    public virtual void PlayPressedEffects()
     {
         audioSourceClick.resource = clickSound;
         audioSourceClick.pitch = Random.Range(1.0f - pitchVariation, 1.0f + pitchVariation);
@@ -95,7 +96,7 @@ public class NumberBlockView : MonoBehaviour
         starBurst.Play();
     }
 
-    public void PlayIncorrectEffects()
+    public virtual void PlayIncorrectEffects()
     {
         audioSourceClick.resource = incorrectSound;
         audioSourceClick.pitch = 1f;
