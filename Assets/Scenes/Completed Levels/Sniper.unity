@@ -2659,17 +2659,21 @@ PrefabInstance:
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 13.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4671285252839624470, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 7461bf5ccc6749446b54d7a9196b2ab1, type: 3}
     - target: {fileID: 5182788472401057066, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.6777015
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5182788472401057066, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.6777015
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5182788472401057066, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.6777015
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5182788472401057066, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
       propertyPath: m_LocalPosition.x
