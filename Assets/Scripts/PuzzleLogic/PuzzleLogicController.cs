@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -39,6 +40,7 @@ public class PuzzleLogicController : MonoBehaviour
         {
             IsComplete = true;
             OnSequenceCompleted?.Invoke();
+            StartCoroutine(LevelComplete());
         }
 
         return true;
@@ -49,5 +51,13 @@ public class PuzzleLogicController : MonoBehaviour
         NextExpectedStep = 1;
         IsComplete = false;
         OnSequenceReset?.Invoke();
+    }
+
+    public IEnumerator LevelComplete()
+    {
+        yield return new WaitForSeconds(2f);
+
+        MainMenuManager.OpenLevelSelectOnNextLoad();
+        SceneLoader.Instance.ReturnToLevelSelect();
     }
 }

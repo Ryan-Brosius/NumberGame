@@ -6,8 +6,32 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
+    path: Assets/Scenes/MainMenu/MainMenu.unity
+    guid: 3fe7371272ca8d94eb24c53192139382
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Crane.unity
+    guid: 37c4fb619725d744284948cd1c443610
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/IceCursor.unity
+    guid: 195d66868ffb3cf42bbec1c4932814c1
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Platformer.unity
+    guid: f0a69c90f4b0af54dbf8e87c8be79d63
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/RunAwayFromCursor.unity
+    guid: 6daba1227ede21d40bb3d84d474235a1
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Sniper.unity
+    guid: 144c3240b640a6f428f95048f92e9f04
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/SquidScene.unity
+    guid: 4a737da08438e9746b3966253fa005c4
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Turret.unity
+    guid: b2e1869d6d1672e45a21cf2ee56f9a86
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Wanted.unity
+    guid: 985c490c93070cf4b8f359904a370363
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
