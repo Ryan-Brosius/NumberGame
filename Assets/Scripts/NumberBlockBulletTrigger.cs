@@ -16,19 +16,32 @@ public class NumberBlockBulletTrigger : MonoBehaviour
     {
         if (collision.gameObject.GetComponent<TurretBullet>() != null)
         {
-            if (numberBlock != null && !numberBlock.IsPressed)
+            PressNumberBlock();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.GetComponent<TurretBullet>() != null)
+        {
+            PressNumberBlock();
+        }
+    }
+
+    private void PressNumberBlock()
+    {
+        if (numberBlock != null && !numberBlock.IsPressed)
+        {
+            numberBlock.IsPressed = true;
+            numberBlock.PlayPressedEffects();
+
+            if (DinoLevel)
             {
-                numberBlock.IsPressed = true;
-                numberBlock.PlayPressedEffects();
+                Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
 
-                if (DinoLevel)
+                foreach (Collider2D collider in colliders)
                 {
-                    Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
-
-                    foreach (Collider2D collider in colliders)
-                    {
-                        collider.enabled = false;
-                    }
+                    collider.enabled = false;
                 }
             }
         }
