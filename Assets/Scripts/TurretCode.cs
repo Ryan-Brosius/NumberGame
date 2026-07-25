@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class TurretCode : MonoBehaviour
 {
@@ -12,6 +13,10 @@ public class TurretCode : MonoBehaviour
     [SerializeField] private float bulletLifetime = 5f;
     [SerializeField] private int maxBullets = 5;
     [SerializeField] private ParticleSystem puffParticles;
+
+    [Header("Audio")]
+    public AudioResource shootSound;
+
     private List<GameObject> activeBullets = new List<GameObject>();
 
     void Update()
@@ -61,5 +66,6 @@ public class TurretCode : MonoBehaviour
         Destroy(bullet, bulletLifetime);
 
         puffParticles.Play();
+        SoundManager.PlaySound(shootSound, volume : 0.7f);
     }
 }
