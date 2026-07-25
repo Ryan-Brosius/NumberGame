@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class NumberBlockBulletTrigger : MonoBehaviour
 {
+    [Header("Settings, in case the collider needs to be disabled when clicked.")]
+    [SerializeField] private bool DinoLevel = false;
+
     private NumberBlockView numberBlock;
 
     private void Awake()
@@ -17,6 +20,16 @@ public class NumberBlockBulletTrigger : MonoBehaviour
             {
                 numberBlock.IsPressed = true;
                 numberBlock.PlayPressedEffects();
+
+                if (DinoLevel)
+                {
+                    Collider2D[] colliders = GetComponentsInChildren<Collider2D>();
+
+                    foreach (Collider2D collider in colliders)
+                    {
+                        collider.enabled = false;
+                    }
+                }
             }
         }
     }
