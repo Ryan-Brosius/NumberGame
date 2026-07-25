@@ -17,7 +17,8 @@ public class LevelSelectButton : MonoBehaviour, ICursorClickable
 
     public void LoadLevel()
     {
-        Debug.Log("Loading level");
-        SceneLoader.Instance.LoadLevel(sceneName);
+        TransitionManager.Open(sceneName);
+        //Debug.Log("Loading level");
+        //SceneLoader.Instance.LoadLevel(sceneName);
     }
 }

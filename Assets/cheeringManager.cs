@@ -14,10 +14,21 @@ public class cheeringManager : MonoBehaviour
     private bool additionPlayed = false;
     private bool isPlaying = false;
 
+    private static cheeringManager instance = null;
+
+    private void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+
+        if (!instance)
+        {
+            instance = this;
+        }
+    }
+
     void Start()
     {
         additionDelay = 0.05f;
-        //PlayCheerSfx();
     }
 
     void Update()

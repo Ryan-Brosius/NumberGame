@@ -21,7 +21,6 @@ public class MusicManager : MonoBehaviour
             instance = this;
             audioSource = GetComponent<AudioSource>();
         }
-        
     }
 
     private void Start()
@@ -29,9 +28,12 @@ public class MusicManager : MonoBehaviour
         if (musicTrack.Count > 0){
             if (musicTrack[0] != null)
             {
-                if (!audioSource.isPlaying)
+                if (audioSource)
                 {
-                    PlayMusic(musicTrack[0], 0f);
+                    if (!audioSource.isPlaying)
+                    {
+                        PlayMusic(musicTrack[0], 0f);
+                    }
                 }
             }
         }

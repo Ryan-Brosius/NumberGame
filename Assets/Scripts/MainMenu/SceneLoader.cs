@@ -41,11 +41,13 @@ public class SceneLoader : MonoBehaviour
     public void ReturnToLevelSelect()
     {
         MainMenuManager.OpenLevelSelectOnNextLoad();
-        LoadLevel(menuSceneName);
+        TransitionManager.Close(menuSceneName);
+        //LoadLevel(menuSceneName);
     }
 
     private IEnumerator LoadRoutine(string sceneName)
     {
+
         yield return null;
 
         SceneManager.LoadScene(sceneName);
