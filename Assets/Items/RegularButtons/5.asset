@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: 5
   m_EditorClassIdentifier: 
   Value: 5
-  ToneSound: {fileID: 8300000, guid: f9ef7b27ac9d6d346802cc0532e11de5, type: 3}
+  ToneSound: {fileID: 8300000, guid: 1143eb56c83476b418bd9398318e808e, type: 3}
   ButtonUpSpriteBottom: {fileID: -948898390, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
   ButtonUpSpriteTop: {fileID: 1542395400, guid: dc130bb866fd6854b98f75f9f2d12291, type: 3}
   ButtonDownSpriteBottom: {fileID: -1268970399, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
