@@ -2,14 +2,20 @@ using UnityEngine;
 
 public class NumberBlockBulletTrigger : MonoBehaviour
 {
-    [Header("Settings, in case the collider needs to be disabled when clicked.")]
+    [Header("puzzle")]
+    [SerializeField] private PuzzleLogicController puzzleController;
+    [Header("settings")]
     [SerializeField] private bool DinoLevel = false;
-
     private NumberBlockView numberBlock;
 
     private void Awake()
     {
         numberBlock = GetComponentInChildren<NumberBlockView>();
+
+        if (puzzleController == null)
+        {
+            puzzleController = FindFirstObjectByType<PuzzleLogicController>();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -30,8 +36,15 @@ public class NumberBlockBulletTrigger : MonoBehaviour
 
     private void PressNumberBlock()
     {
-        if (numberBlock != null && !numberBlock.IsPressed)
+        if (numberBlock == null || puzzleController == null)
+            return;
+        if (numberBlock.IsPressed)
+            return;
+        int hitValue = numberBlock.Value;
+        if (hitValue == puzzleController.NextExpectedStep)
         {
+            puzzleController.ReportAction(hitValue);
+
             numberBlock.IsPressed = true;
             numberBlock.PlayPressedEffects();
 
@@ -44,6 +57,12 @@ public class NumberBlockBulletTrigger : MonoBehaviour
                     collider.enabled = false;
                 }
             }
+        }
+        else
+        {
+            numberBlock.PlayIncorrectEffects();
+            puzzleController.ReportAction(hitValue);
+            puzzleController.ResetSequence();
         }
     }
 }
