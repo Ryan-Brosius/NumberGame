@@ -15,6 +15,6 @@ MonoBehaviour:
   Value: 7
   ToneSound: {fileID: 8300000, guid: 168e4358c86625844a6f55cd58b8a675, type: 3}
   ButtonUpSpriteBottom: {fileID: -512979251, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
-  ButtonUpSpriteTop: {fileID: 27257045, guid: dc130bb866fd6854b98f75f9f2d12291, type: 3}
+  ButtonUpSpriteTop: {fileID: -4668488919237166563, guid: 39435b74e5352a54a9bb9e936a61f0c4, type: 3}
   ButtonDownSpriteBottom: {fileID: -731243308, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
-  ButtonDownSpriteTop: {fileID: 27257045, guid: dc130bb866fd6854b98f75f9f2d12291, type: 3}
+  ButtonDownSpriteTop: {fileID: -4668488919237166563, guid: 39435b74e5352a54a9bb9e936a61f0c4, type: 3}
