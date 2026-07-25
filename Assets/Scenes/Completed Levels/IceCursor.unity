@@ -1254,6 +1254,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGElements
       objectReference: {fileID: 0}
+    - target: {fileID: 5935198441551703032, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 3461422262853264378, guid: 64f4ac0425777e84abbbe0b13dbd326b, type: 3}
+    - target: {fileID: 5935198441551703032, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: UVModule.sprites.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 8966525999988505677, guid: 64f4ac0425777e84abbbe0b13dbd326b, type: 3}
     - target: {fileID: 6118619508738829164, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
       propertyPath: m_Sprite
       value: 
