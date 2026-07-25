@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class DinoJump : MonoBehaviour
 {
     [SerializeField] private float jumpForce = 10f;
+    public AudioResource jumpSound;
 
     private Rigidbody2D rb;
     private bool isGrounded;
@@ -18,6 +20,8 @@ public class DinoJump : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             isGrounded = false;
+
+            SoundManager.PlaySound( jumpSound, volume : 0.6f);
         }
     }
 
