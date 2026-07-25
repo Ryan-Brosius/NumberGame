@@ -62,7 +62,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Palette:
-        m_Texture: {fileID: 2800000, guid: 6fd6c095195e4fa4594e85c77ee2d4a0, type: 3}
+        m_Texture: {fileID: 2800000, guid: 42ff5509b60c6b54ea1a67dfd7b16941, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _PaletteBrightness:
@@ -107,7 +107,7 @@ Material:
     - _OcclusionStrength: 1
     - _Offset: 0.045
     - _PaletteShift: 0
-    - _PaletteSize: 32
+    - _PaletteSize: 21
     - _Parallax: 0.02
     - _Shade: 1
     - _SortMode: 0
