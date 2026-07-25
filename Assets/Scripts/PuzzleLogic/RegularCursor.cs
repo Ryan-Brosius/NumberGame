@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class RegularCursor : MonoBehaviour
 {
@@ -11,6 +12,10 @@ public class RegularCursor : MonoBehaviour
 
     [Header("Effects")]
     [SerializeField] private ParticleSystem clickParticles;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSourceClick;
+    [SerializeField] private AudioResource clickSound;
 
     private BoxCollider2D _collider;
     private readonly Collider2D[] _results = new Collider2D[10];
@@ -73,6 +78,8 @@ public class RegularCursor : MonoBehaviour
         int count = _collider.Overlap(_filter, _results);
 
         clickParticles.Play();
+        audioSourceClick.pitch = Random.Range(0.9f, 1.1f);
+        audioSourceClick.Play();
 
         ICursorClickable firstClickable = null;
         for (int i = 0; i < count; i++)
