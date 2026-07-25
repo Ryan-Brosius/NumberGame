@@ -11,6 +11,7 @@ public class TurretCode : MonoBehaviour
     [SerializeField] private float bulletSpeed = 10f;
     [SerializeField] private float bulletLifetime = 5f;
     [SerializeField] private int maxBullets = 5;
+    [SerializeField] private ParticleSystem puffParticles;
     private List<GameObject> activeBullets = new List<GameObject>();
 
     void Update()
@@ -58,5 +59,7 @@ public class TurretCode : MonoBehaviour
             rb.linearVelocity = firePoint.up * bulletSpeed;
         }
         Destroy(bullet, bulletLifetime);
+
+        puffParticles.Play();
     }
 }
