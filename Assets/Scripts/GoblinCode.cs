@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
+using System.Collections.Generic;
 
 public class GoblinCode : MonoBehaviour
 {
@@ -23,6 +25,11 @@ public class GoblinCode : MonoBehaviour
     [SerializeField] private float stretchAmount = 1.3f;
     [SerializeField] private float painDuration = 0.12f;
     [SerializeField] private float recoveryDuration = 0.2f;
+
+    [Header("Audio")]
+    [SerializeField] private List<AudioResource> laughSounds;
+    [SerializeField] private List<AudioResource> bonkSounds;
+
     private RectTransform rectTransform;
     private Vector2 startingPosition;
     private Vector2 wanderTarget;
@@ -188,6 +195,8 @@ public class GoblinCode : MonoBehaviour
 
         ChooseNewWanderTarget();
         currentState = GoblinState.Wandering;
+
+        SoundManager.PlaySound( laughSounds[ Random.Range(0, laughSounds.Count-1) ], volume: 0.6f);
     }
 
     private void Retreat()
@@ -247,6 +256,7 @@ public class GoblinCode : MonoBehaviour
             StopCoroutine(painCoroutine);
         }
         painCoroutine = StartCoroutine(PainSquashStretch());
+        SoundManager.PlaySound(bonkSounds[Random.Range(0, bonkSounds.Count-1)], volume: 0.6f);
     }
 
     private IEnumerator PainSquashStretch()
