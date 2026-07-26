@@ -1694,6 +1694,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2528486722869787856, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2686962253641157895, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
       propertyPath: m_Name
       value: BGElements
@@ -1710,10 +1714,18 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.60784316
       objectReference: {fileID: 0}
+    - target: {fileID: 7750859810177503135, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: m_SortingOrder
+      value: -100
+      objectReference: {fileID: 0}
     - target: {fileID: 8778860700992302072, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -453276713, guid: 8cb6719d93f2b3c47b85066d02a0b85a, type: 3}
+    - target: {fileID: 8778860700992302072, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: m_SortingOrder
+      value: -99
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
