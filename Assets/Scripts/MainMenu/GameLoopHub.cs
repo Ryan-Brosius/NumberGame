@@ -89,7 +89,7 @@ public class GameLoopHub : MonoBehaviour
 
     private void ApplyBaseState()
     {
-        for (int i = 0; i < buttonViews.Count; i++)
+        for (int i = 0; i < buttonViews.Count - 1; i++)
         {
             buttonViews[i].SetData(numberDatas[i], numberDatas[i]);
             buttonViews[i].IsPressed = !(i >= GameProgress.CompletedCount);
@@ -136,7 +136,7 @@ public class GameLoopHub : MonoBehaviour
 
         GameProgress.CompletedCount++;
 
-        if (GameProgress.CompletedCount >= buttonViews.Count)
+        if (GameProgress.CompletedCount >= buttonViews.Count-1)
         {
             yield return new WaitForSeconds(0.8f);
             TransitionManager.Open("EndingScene", null);
@@ -173,8 +173,8 @@ public class GameLoopHub : MonoBehaviour
         // shuffle everything
         for (int s = 0; s < shuffleSwaps; s++)
         {
-            int a = Random.Range(0, buttonViews.Count);
-            int b = Random.Range(0, buttonViews.Count - 1);
+            int a = Random.Range(0, buttonViews.Count - 1);
+            int b = Random.Range(0, buttonViews.Count - 2);
             if (b >= a) b++;   // distinct pair
 
             //NumberBlockData dataA = buttonViews[a].BlockData;
@@ -203,7 +203,7 @@ public class GameLoopHub : MonoBehaviour
     public void HandleButtonClicked(int index)
     {
         Debug.Log("try");
-        if (busy || index < 0 || index >= buttonViews.Count)
+        if (busy || index < 0 || index >= buttonViews.Count -1)
             return;
 
         if (index == GameProgress.CompletedCount)

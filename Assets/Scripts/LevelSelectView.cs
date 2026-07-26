@@ -7,6 +7,7 @@ public class LevelSelectView : NumberBlockView
 
     public Vector3 targetPosition;
     public float targetScale = 1f;
+    public bool isVictory = false;
 
     private void Update()
     {
@@ -16,6 +17,9 @@ public class LevelSelectView : NumberBlockView
 
     public override void ApplyState()
     {
+        if (isVictory)
+            return;
+
         renderer1.sprite = (isPressed)? levelData.ButtonSpriteComplete : levelData.ButtonSprite;
         renderer2.sprite = levelData.Icon;
 
@@ -25,6 +29,8 @@ public class LevelSelectView : NumberBlockView
 
     public void SetLevelData(LevelData data)
     {
+        if (isVictory)
+            return;
         Debug.Log("Set level data");
         levelData = data;
         ApplyState();

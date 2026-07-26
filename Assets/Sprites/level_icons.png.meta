@@ -565,6 +565,28 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: level_icons_19
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 2
+        width: 24
+        height: 26
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0594394e7ee0c4f9a67d21a9ab63fb
+      internalID: 1929799895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -590,6 +612,7 @@ TextureImporter:
       level_icons_16: -4951848553735809246
       level_icons_17: 934784942
       level_icons_18: -621392788
+      level_icons_19: 1929799895
       level_icons_2: 2757969559025206618
       level_icons_3: -2292698533589896919
       level_icons_4: -5051152410008374243
