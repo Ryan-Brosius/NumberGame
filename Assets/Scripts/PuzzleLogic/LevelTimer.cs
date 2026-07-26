@@ -58,10 +58,7 @@ public class LevelTimer : MonoBehaviour
     {
         if (ended)
             return;
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            RegainTime();
-        }
+
         TimeRemaining -= pauseTimer ? 0.0f : Time.deltaTime;
 
         

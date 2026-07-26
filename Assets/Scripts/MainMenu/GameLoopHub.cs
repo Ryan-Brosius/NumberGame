@@ -135,6 +135,7 @@ public class GameLoopHub : MonoBehaviour
         if (GameProgress.CompletedCount >= buttonViews.Count)
         {
             yield return new WaitForSeconds(0.8f);
+            TransitionManager.Open("EndingScene", null);
             OnRunCompleted?.Invoke();
         }
         else
