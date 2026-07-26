@@ -47,6 +47,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Completed Levels/NumberMaze.unity
     guid: a4b65ca95bb4e1f47b1df4a228499362
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/HotAndCold.unity
+    guid: 08db5beb2eef7124db17122dd2953700
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Magnifying.unity
+    guid: ae021208cbc8da747b40b24137068d24
+  - enabled: 1
+    path: Assets/Scenes/Completed Levels/Math.unity
+    guid: 798a33643149ff94a81090b5657f963a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

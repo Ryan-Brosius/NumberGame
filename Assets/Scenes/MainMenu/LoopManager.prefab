@@ -82,6 +82,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7facd58fb38b79b468d2954a5f711107, type: 2}
   - {fileID: 11400000, guid: 00ab44b2d32461844b009fcbd2919f1c, type: 2}
   - {fileID: 11400000, guid: 944dcc72a9df2ef47ae7faf853b23e77, type: 2}
+  - {fileID: 11400000, guid: 885ac0ad24f6e814782dd7ebfc498af3, type: 2}
   activateDelay: 0.8
   launchDelay: 0.4
   rollbackStartDelay: 0.6

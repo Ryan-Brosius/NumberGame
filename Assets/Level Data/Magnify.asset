@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Magnify
   m_EditorClassIdentifier: 
   Index: 9
-  SceneString: squid
+  SceneString: Magnifying
   Icon: {fileID: 0}
   WindowBorderSprite: {fileID: 0}
   WindowTextSprite: {fileID: 0}
