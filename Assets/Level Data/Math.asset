@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Math
   m_EditorClassIdentifier: 
   Index: 4
-  SceneString: squid
+  SceneString: Math
   Icon: {fileID: 0}
   WindowBorderSprite: {fileID: 0}
   WindowTextSprite: {fileID: 0}

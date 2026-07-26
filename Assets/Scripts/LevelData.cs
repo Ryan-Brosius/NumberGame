@@ -10,7 +10,7 @@ public enum LEVEL
     ICE_CURSOR,
     GOBLINS,
     MATH,
-    GRID,
+    HOT_COLD,
     WANTED,
     CRANE,
     SNIPER,

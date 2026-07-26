@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40029936ee4e88e41bddbab09e65ead3, type: 3}
-  m_Name: Grid
+  m_Name: HotAndCold
   m_EditorClassIdentifier: 
-  Index: 0
-  SceneString: squid
+  Index: 5
+  SceneString: HotAndCold
   Icon: {fileID: 0}
+  WindowBorderSprite: {fileID: 0}
   WindowTextSprite: {fileID: 0}
