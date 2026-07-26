@@ -8,6 +8,7 @@ public class GolfBall : MonoBehaviour, ICursorClickable
     [SerializeField] private float maxLaunchSpeed = 16f;
     [SerializeField] private float deadzone = 0.05f;
     [SerializeField] private float stopThreshold = 0.2f;
+    [SerializeField] private float dragStopThreshold = 5.0f;
 
     [Header("Physics")]
     [SerializeField] private float rollingFriction = 1f;
@@ -64,7 +65,7 @@ public class GolfBall : MonoBehaviour, ICursorClickable
 
     public void CursorDragStart()
     {
-        if (IsMoving && !inHole)
+        if (body.linearVelocity.magnitude > dragStopThreshold && !inHole)
             return;
 
         cursor = FindFirstObjectByType<RegularCursor>().transform;
@@ -125,6 +126,7 @@ public class GolfBall : MonoBehaviour, ICursorClickable
         inHole = true;
         body.linearVelocity = Vector2.zero;
         body.angularVelocity = 0f;
+
     }
 
     public void ClearHole(GolfHole hole)

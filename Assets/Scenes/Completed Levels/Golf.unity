@@ -390,21 +390,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1965013744, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
     - target: {fileID: 6424054378351079438, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 3632791529089188756, guid: 39435b74e5352a54a9bb9e936a61f0c4, type: 3}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.b
-      value: 0.8784314
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.41960785
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
-      value: 0.78039217
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053184247068347381, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: orthographic size
@@ -450,7 +454,7 @@ Transform:
   m_GameObject: {fileID: 421594352}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071071, w: 0.7071065}
-  m_LocalPosition: {x: 9.77, y: 0.48, z: 0}
+  m_LocalPosition: {x: 9.64, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -630,7 +634,7 @@ Transform:
   m_GameObject: {fileID: 501017554}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071071, w: 0.7071065}
-  m_LocalPosition: {x: -11.56, y: 0.63, z: 0}
+  m_LocalPosition: {x: -11.43, y: 0.63, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -823,21 +827,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1764655320, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
     - target: {fileID: 6424054378351079438, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5864333483251108556, guid: 39435b74e5352a54a9bb9e936a61f0c4, type: 3}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.b
-      value: 0.85882354
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.5254902
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
-      value: 0.28627452
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053184247068347381, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: orthographic size
@@ -1102,7 +1110,7 @@ Transform:
   m_GameObject: {fileID: 1028135556}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -7.39, z: 0}
+  m_LocalPosition: {x: 0, y: -7.22, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1238,21 +1246,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1908754926, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
     - target: {fileID: 6424054378351079438, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -5435237688880294741, guid: 39435b74e5352a54a9bb9e936a61f0c4, type: 3}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.b
-      value: 0.4117647
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.8784314
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
-      value: 0.9647059
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053184247068347381, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: orthographic size
@@ -1340,21 +1352,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1721111659, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
     - target: {fileID: 6424054378351079438, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 4096004025522177507, guid: 39435b74e5352a54a9bb9e936a61f0c4, type: 3}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.b
-      value: 0.8901961
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.9137255
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
-      value: 0.60784316
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053184247068347381, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: orthographic size
@@ -1442,21 +1458,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1548051524, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
     - target: {fileID: 6424054378351079438, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -7415923299472190941, guid: 39435b74e5352a54a9bb9e936a61f0c4, type: 3}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.b
-      value: 0.29411766
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.5882353
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
-      value: 0.9843137
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053184247068347381, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: orthographic size
@@ -1831,6 +1851,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 950268201, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
     - target: {fileID: 6424054378351079438, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -1841,11 +1865,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.54901963
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
-      value: 0.70980394
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053184247068347381, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: orthographic size
@@ -1968,21 +1992,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -204271465, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
     - target: {fileID: 6424054378351079438, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -3139877859451316586, guid: 39435b74e5352a54a9bb9e936a61f0c4, type: 3}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.b
-      value: 0.4627451
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.9490196
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
-      value: 0.7411765
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053184247068347381, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: orthographic size
@@ -2048,6 +2076,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 274577630146100971, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528486722869787856, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2686962253641157895, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
@@ -2313,6 +2345,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flag (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1795101443, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
     - target: {fileID: 6424054378351079438, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2323,7 +2359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.7607843
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
@@ -2416,16 +2452,20 @@ PrefabInstance:
       value: Flag
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -168059252, guid: 187e0682a7df5cc4c8f4e6e7f92cc385, type: 3}
+    - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.b
-      value: 0.29411766
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.g
-      value: 0.22352941
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6993022256397752999, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: m_Color.r
-      value: 0.7176471
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7053184247068347381, guid: a197c5031d57e52409ca27730df1a505, type: 3}
       propertyPath: orthographic size

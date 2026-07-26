@@ -595,6 +595,7 @@ MonoBehaviour:
   holeBallPosition: {fileID: 2151557583864216840}
   blockView: {fileID: 2177933239217397174}
   poleSprite: {fileID: 2752112174674826928}
+  flagSprite: {fileID: 6993022256397752999}
   noBallSprite: {fileID: -385779615979906321, guid: 1d6c2d71dc0ab464b99184b7859a779a, type: 3}
   ballSprite: {fileID: -89762803, guid: 57ea3275ce432884a91f9082978180e4, type: 3}
 --- !u!1 &9165314127585788047
