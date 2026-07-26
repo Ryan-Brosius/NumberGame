@@ -1044,7 +1044,7 @@ MonoBehaviour:
   contactTimeRequired: 0.5
   puzzleController: {fileID: 0}
   retreatSpeed: 6
-  returnCooldown: 0.5
+  returnCooldown: 0.75
   squashAmount: 0.85
   stretchAmount: 1.25
   painDuration: 0.1
@@ -1442,7 +1442,7 @@ MonoBehaviour:
   contactTimeRequired: 0.5
   puzzleController: {fileID: 0}
   retreatSpeed: 6
-  returnCooldown: 0.5
+  returnCooldown: 0.75
   squashAmount: 0.85
   stretchAmount: 1.25
   painDuration: 0.1
