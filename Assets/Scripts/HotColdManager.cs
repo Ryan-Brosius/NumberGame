@@ -6,15 +6,19 @@ public class HotColdManager : MonoBehaviour
     [Header("cursor")]
     [SerializeField] private Transform cursor;
     [Header("hot / cold slider")]
-    [SerializeField] private Slider hotColdSlider;
+    [SerializeField] private SpriteRenderer hotColdSlider;
     [Header("puzzle controller")]
     [SerializeField] private PuzzleLogicController puzzleController;
     [Header("hot / cold distance")]
     [SerializeField] private float coldDistance = 10f;
-    [SerializeField] private float hotDistance = 1f;
+    [SerializeField] private float hotDistance = 2f;
     [Header("slider smoothing")]
     [SerializeField] private float sliderSmoothSpeed = 5f;
     private NumberBlockView[] numberBlocks;
+
+    private float sliderMinHeight = 0f;
+    private float sliderMaxHeight = 5.1f;
+    private float sliderValue = 0f;
 
     private void Start()
     {
@@ -22,11 +26,13 @@ public class HotColdManager : MonoBehaviour
             FindObjectsInactive.Include,
             FindObjectsSortMode.None
         );
+        sliderValue = 0f;
         if (hotColdSlider != null)
         {
-            hotColdSlider.minValue = 0f;
-            hotColdSlider.maxValue = 1f;
-            hotColdSlider.value = 0f;
+            //hotColdSlider.minValue = 0f;
+            //hotColdSlider.maxValue = 1f;
+            //hotColdSlider.value = 0f;
+            hotColdSlider.size = new Vector2(0.84f, sliderMinHeight);
         }
     }
 
@@ -39,6 +45,14 @@ public class HotColdManager : MonoBehaviour
         {
             return;
         }
+
+
+        hotColdSlider.size = new Vector2(0.84f, Mathf.Lerp(
+            sliderMinHeight,
+            sliderMaxHeight,
+            sliderValue)
+        );
+
         int expectedValue = puzzleController.NextExpectedStep;
         Transform correctBlockParent = null;
         foreach (NumberBlockView numberBlock in numberBlocks)
@@ -55,14 +69,11 @@ public class HotColdManager : MonoBehaviour
                 break;
             }
         }
+
+        
         if (correctBlockParent == null)
         {
-            hotColdSlider.value = Mathf.Lerp(
-                hotColdSlider.value,
-                0f,
-                Time.deltaTime * sliderSmoothSpeed
-            );
-
+            sliderValue = Mathf.Lerp(sliderValue, 0f, Time.deltaTime * sliderSmoothSpeed);
             return;
         }
         float distance = Vector3.Distance(
@@ -74,10 +85,12 @@ public class HotColdManager : MonoBehaviour
             hotDistance,
             distance
         );
-        hotColdSlider.value = Mathf.Lerp(
+
+        sliderValue = Mathf.Lerp(sliderValue, hotValue, Time.deltaTime * sliderSmoothSpeed);
+        /*hotColdSlider.value = Mathf.Lerp(
             hotColdSlider.value,
             hotValue,
             Time.deltaTime * sliderSmoothSpeed
-        );
+        );*/
     }
 }
