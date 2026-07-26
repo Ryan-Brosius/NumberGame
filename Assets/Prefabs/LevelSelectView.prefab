@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1369808697932315565, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5415428649234152837, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
+    - target: {fileID: 1369808697932315565, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1373968452523284718, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -52,6 +60,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelectView
       objectReference: {fileID: 0}
+    - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 5415428649234152837, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
     m_RemovedComponents:
     - {fileID: 8142507741470498792, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
     m_RemovedGameObjects: []
@@ -97,7 +109,9 @@ MonoBehaviour:
   incorrectSound: {fileID: 8300000, guid: f6c126214785cc7409cdd970ebc99eda, type: 3}
   starBurst: {fileID: 3434991064852757526}
   isPressed: 0
+  levelData: {fileID: 11400000, guid: e7aa9fa3bd2ebce46b59d7bbf73e5114, type: 2}
   targetPosition: {x: 0, y: 0, z: 0}
+  targetScale: 0
 --- !u!212 &6649094355348757592 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
