@@ -908,9 +908,9 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 6554736390298987251, guid: 082aaf5108616af48bd5b224d5947cee, type: 3}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1113,7 +1113,7 @@ Transform:
   m_GameObject: {fileID: 490106266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1254,6 +1254,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: BGElements
       objectReference: {fileID: 0}
+    - target: {fileID: 5935198441551703032, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: UVModule.sprites.Array.data[0].sprite
+      value: 
+      objectReference: {fileID: 3461422262853264378, guid: 64f4ac0425777e84abbbe0b13dbd326b, type: 3}
+    - target: {fileID: 5935198441551703032, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
+      propertyPath: UVModule.sprites.Array.data[1].sprite
+      value: 
+      objectReference: {fileID: 8966525999988505677, guid: 64f4ac0425777e84abbbe0b13dbd326b, type: 3}
     - target: {fileID: 6118619508738829164, guid: 63609ba7c3987c249abc219e47de46e3, type: 3}
       propertyPath: m_Sprite
       value: 
