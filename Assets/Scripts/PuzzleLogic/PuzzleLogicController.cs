@@ -15,10 +15,15 @@ public class PuzzleLogicController : MonoBehaviour
     public UnityEvent OnSequenceCompleted;
     public UnityEvent<int, int> OnSequenceFailed;   // Expected, Received
     public UnityEvent OnSequenceReset;
+    private LevelTimer levelTimer;
 
     public int TotalSteps => totalSteps;
     public int NextExpectedStep { get; private set; } = 10;
     public bool IsComplete { get; private set; }
+    private void Awake()
+    {
+        levelTimer = FindAnyObjectByType<LevelTimer>();
+    }
 
     public bool ReportAction(int stepIndex)
     {
@@ -32,7 +37,7 @@ public class PuzzleLogicController : MonoBehaviour
                 ResetSequence();
             return false;
         }
-
+        levelTimer?.RegainTime();
         OnStepCompleted?.Invoke(stepIndex);
         NextExpectedStep--;
 

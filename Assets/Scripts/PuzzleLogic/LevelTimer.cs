@@ -18,7 +18,12 @@ public class LevelTimer : MonoBehaviour
     [SerializeField] private float timeBarWidthMax = 8f;
     [SerializeField] private float timeBarSliceWidth = 14f;
 
-    public float TimeRemaining { get; private set; }
+    public float TimeRemaining;
+    [Header("Time Regain")]
+    [SerializeField] private float regainAmount = 1f;
+    [SerializeField] private float regainDecay = 0.1f;
+
+    private int timesRegained = 0;
     private bool ended;
     private float timeBarWidth = 0f;
     private Vector2 timeBarDefaultSize = new Vector2(0f, 0f);
@@ -47,7 +52,10 @@ public class LevelTimer : MonoBehaviour
     {
         if (ended)
             return;
-
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            RegainTime();
+        }
         TimeRemaining -= Time.deltaTime;
 
         
@@ -92,5 +100,18 @@ public class LevelTimer : MonoBehaviour
         MainMenuManager.OpenLevelSelectOnNextLoad();
         GameProgress.LastResult = GameProgress.Result.Failed;
         SceneLoader.Instance.ReturnToLevelSelect();
+    }
+
+    public void RegainTime()
+    {
+        if (ended)
+            return;
+        float amountToRegain = regainAmount - (timesRegained * regainDecay);
+        amountToRegain = Mathf.Max(0f, amountToRegain);
+        TimeRemaining = Mathf.Min(
+            TimeRemaining + amountToRegain,
+            timeLimit
+        );
+        timesRegained++;
     }
 }
