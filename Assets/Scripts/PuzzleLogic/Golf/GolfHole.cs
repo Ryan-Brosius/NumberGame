@@ -9,6 +9,7 @@ public class GolfHole : MonoBehaviour
     [SerializeField] public Transform holeBallPosition;
 
     [SerializeField] private SpriteRenderer poleSprite;
+    [SerializeField] private SpriteRenderer flagSprite;
     [SerializeField] private Sprite noBallSprite;
     [SerializeField] private Sprite ballSprite;
 
@@ -45,6 +46,7 @@ public class GolfHole : MonoBehaviour
     public void BallInHole()
     {
         poleSprite.sprite = ballSprite;
+        flagSprite.gameObject.SetActive(false);
     }
 
     public void BallExitHole()
