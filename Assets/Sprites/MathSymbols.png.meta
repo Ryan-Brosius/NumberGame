@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: c3b77e985bdfbd64cb0d35fadcca0569
+guid: 0c1d23291bcfaf340887519da63dd1fa
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8979687470595073335
-    second: math_0
+      213: 4546065623463472758
+    second: MathSymbols_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: math_0
+      name: MathSymbols_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,14 +128,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 73568d69d224e9c70800000000000000
-      internalID: 8979687470595073335
+      spriteID: 67ea724399ed61f30800000000000000
+      internalID: 4546065623463472758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: math_1
+      name: MathSymbols_1
       rect:
         serializedVersion: 2
         x: 8
@@ -150,14 +150,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 29dc4d466ed7360459beae712fcb9fe7
-      internalID: 1702370439
+      spriteID: 80b7f840f12745c439c21e8a826e5e7c
+      internalID: 17450000
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: math_2
+      name: MathSymbols_2
       rect:
         serializedVersion: 2
         x: 16
@@ -172,14 +172,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bfcfdc00159442349a3380f95aed0796
-      internalID: -228941802
+      spriteID: 4d6842eaac2f6e64fa2e73d936a09bc6
+      internalID: -1914798170
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: math_3
+      name: MathSymbols_3
       rect:
         serializedVersion: 2
         x: 24
@@ -194,8 +194,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 185ba4100a36407498a4d7221c26da03
-      internalID: 377507585
+      spriteID: 189e33ff8a0332349a018b04075982bd
+      internalID: 202371800
       vertices: []
       indices: 
       edges: []
@@ -204,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b197cc7ea6bbf5649826aabd42d1c180
+    spriteID: 1d88ed2c40b895d4587069cba8a0b82c
     internalID: 0
     vertices: []
     indices: 
@@ -214,10 +214,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      math_0: 8979687470595073335
-      math_1: 1702370439
-      math_2: -228941802
-      math_3: 377507585
+      MathSymbols_0: 4546065623463472758
+      MathSymbols_1: 17450000
+      MathSymbols_2: -1914798170
+      MathSymbols_3: 202371800
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
