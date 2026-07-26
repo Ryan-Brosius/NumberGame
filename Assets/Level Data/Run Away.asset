@@ -17,3 +17,4 @@ MonoBehaviour:
   Icon: {fileID: -2787823357188906823, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
   WindowBorderSprite: {fileID: 220848799, guid: 8cb6719d93f2b3c47b85066d02a0b85a, type: 3}
   WindowTextSprite: {fileID: 0}
+  ButtonSprite: {fileID: -948898390, guid: 66b159d9a3b62204688506c2c460f152, type: 3}

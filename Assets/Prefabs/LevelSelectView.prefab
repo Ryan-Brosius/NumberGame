@@ -60,10 +60,42 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelSelectView
       objectReference: {fileID: 0}
+    - target: {fileID: 3069313833560139471, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069313833560139471, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069313833560139471, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3069313833560139471, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_Size.x
+      value: 1.625
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_Size.y
+      value: 1.625
+      objectReference: {fileID: 0}
     - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5415428649234152837, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
+      objectReference: {fileID: -1341545420, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
+    - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_DrawMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3810792942941303340, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8142507741470498792, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
     m_RemovedGameObjects: []
