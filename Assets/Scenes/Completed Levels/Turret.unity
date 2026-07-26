@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 11652217}
   - component: {fileID: 11652218}
   - component: {fileID: 11652219}
+  - component: {fileID: 11652220}
   m_Layer: 0
   m_Name: Button1
   m_TagString: Untagged
@@ -241,6 +242,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &11652220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 11652213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1001 &24814520
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -343,6 +357,7 @@ GameObject:
   - component: {fileID: 69477384}
   - component: {fileID: 69477385}
   - component: {fileID: 69477386}
+  - component: {fileID: 69477387}
   m_Layer: 0
   m_Name: Button1 (2)
   m_TagString: Untagged
@@ -453,6 +468,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &69477387
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 69477382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1 &101385248
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +493,7 @@ GameObject:
   - component: {fileID: 101385250}
   - component: {fileID: 101385251}
   - component: {fileID: 101385252}
+  - component: {fileID: 101385253}
   m_Layer: 0
   m_Name: Button1 (5)
   m_TagString: Untagged
@@ -575,6 +604,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &101385253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101385248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1 &119884338
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,6 +629,7 @@ GameObject:
   - component: {fileID: 119884340}
   - component: {fileID: 119884341}
   - component: {fileID: 119884342}
+  - component: {fileID: 119884343}
   m_Layer: 0
   m_Name: Button1 (7)
   m_TagString: Untagged
@@ -697,6 +740,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &119884343
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119884338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1 &122337105
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +765,7 @@ GameObject:
   - component: {fileID: 122337107}
   - component: {fileID: 122337108}
   - component: {fileID: 122337109}
+  - component: {fileID: 122337110}
   m_Layer: 0
   m_Name: Button1 (8)
   m_TagString: Untagged
@@ -819,6 +876,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &122337110
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122337105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1 &185007070
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,6 +1891,7 @@ GameObject:
   - component: {fileID: 768338696}
   - component: {fileID: 768338697}
   - component: {fileID: 768338698}
+  - component: {fileID: 768338699}
   m_Layer: 0
   m_Name: Button1 (9)
   m_TagString: Untagged
@@ -1931,6 +2002,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &768338699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768338694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1 &780360090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,6 +2401,7 @@ GameObject:
   - component: {fileID: 1226425112}
   - component: {fileID: 1226425113}
   - component: {fileID: 1226425114}
+  - component: {fileID: 1226425115}
   m_Layer: 0
   m_Name: Button1 (1)
   m_TagString: Untagged
@@ -2427,6 +2512,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1226425115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1226425110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!4 &1313672994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1373968452523284718, guid: f2888b44510233849a93f2933f9e62c9, type: 3}
@@ -2444,6 +2542,7 @@ GameObject:
   - component: {fileID: 1374843980}
   - component: {fileID: 1374843981}
   - component: {fileID: 1374843982}
+  - component: {fileID: 1374843983}
   m_Layer: 0
   m_Name: Button1 (4)
   m_TagString: Untagged
@@ -2554,6 +2653,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1374843983
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374843978}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1001 &1379861132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3018,6 +3130,7 @@ GameObject:
   - component: {fileID: 1690661776}
   - component: {fileID: 1690661777}
   - component: {fileID: 1690661778}
+  - component: {fileID: 1690661779}
   m_Layer: 0
   m_Name: Button1 (3)
   m_TagString: Untagged
@@ -3128,6 +3241,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1690661779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690661774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1001 &1769720653
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3485,6 +3611,7 @@ GameObject:
   - component: {fileID: 1881115614}
   - component: {fileID: 1881115615}
   - component: {fileID: 1881115616}
+  - component: {fileID: 1881115617}
   m_Layer: 0
   m_Name: Button1 (6)
   m_TagString: Untagged
@@ -3595,6 +3722,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1881115617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881115612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e9064f510b38934b91d5703e35869f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  seconds: 14
 --- !u!1001 &1887518680
 PrefabInstance:
   m_ObjectHideFlags: 0

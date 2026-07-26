@@ -1705,7 +1705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6765583381330537226, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
       propertyPath: regainAmount
-      value: 1.5
+      value: 4.5
       objectReference: {fileID: 0}
     - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
       propertyPath: m_LocalPosition.x
