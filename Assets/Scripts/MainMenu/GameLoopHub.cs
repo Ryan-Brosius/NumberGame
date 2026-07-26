@@ -152,7 +152,8 @@ public class GameLoopHub : MonoBehaviour
         GameProgress.UsedLevels.Add(level.Index);
 
         yield return new WaitForSeconds(launchDelay);
-        SceneLoader.Instance.LoadLevel(level.SceneString);
+        TransitionManager.Open(level.SceneString, level.WindowBorderSprite);
+        //SceneLoader.Instance.LoadLevel(level.SceneString);
     }
 
     private LevelData PickRandomUnusedLevel()
