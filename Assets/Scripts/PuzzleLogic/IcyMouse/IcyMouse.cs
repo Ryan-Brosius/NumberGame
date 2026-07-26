@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.InputSystem.XR;
 
 public class IcyMouse : MonoBehaviour
@@ -11,6 +12,12 @@ public class IcyMouse : MonoBehaviour
 
     [Header("References")]
     [SerializeField] private Camera boundsCamera;
+
+    [Header("Effects")]
+    [SerializeField] private ParticleSystem clickParticles;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSourceClick;
 
     private Vector2 velocity;
     public Vector2 Velocity => velocity;
@@ -83,6 +90,10 @@ public class IcyMouse : MonoBehaviour
     {
         if (!Input.GetMouseButtonDown(0))
             return;
+
+        clickParticles.Play();
+        audioSourceClick.pitch = Random.Range(0.9f, 1.1f);
+        audioSourceClick.Play();
 
         int count = _collider.Overlap(_filter, _results);
 
