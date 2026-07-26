@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Audio;
 
 public class GameLoopHub : MonoBehaviour
 {
@@ -38,6 +39,9 @@ public class GameLoopHub : MonoBehaviour
     [SerializeField] private float buttonSpacing = 2.5f;
     [SerializeField] private SpriteRenderer levelNameSR;
     [SerializeField] private SpriteRenderer levelHintSR;
+
+    [Header("Audio")]
+    [SerializeField] private AudioResource shuffleSound;
 
     private bool busy;
 
@@ -163,6 +167,8 @@ public class GameLoopHub : MonoBehaviour
         GameProgress.ResetRun();
 
         yield return new WaitForSeconds(0.3f);
+        SoundManager.PlaySound(shuffleSound, volume: 0.6f);
+        yield return null;
 
         // shuffle everything
         for (int s = 0; s < shuffleSwaps; s++)

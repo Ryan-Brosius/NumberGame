@@ -7281,6 +7281,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 342658045}
     - target: {fileID: 3472598417308637953, guid: cdebc06623258bb45ab417df87641d98, type: 3}
+      propertyPath: shuffleSound
+      value: 
+      objectReference: {fileID: 8300000, guid: e8f4d723c822c704b8151ce2da42608f, type: 3}
+    - target: {fileID: 3472598417308637953, guid: cdebc06623258bb45ab417df87641d98, type: 3}
       propertyPath: 'buttonViews.Array.data[0]'
       value: 
       objectReference: {fileID: 809763533}
