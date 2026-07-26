@@ -110,9 +110,8 @@ Shader "GBCamera/GBPalette" {
                     float2 paletteUV = float2((j + 0.5) / _PaletteSize, 0.5);
                     float3 paletteColor = tex2D(_Palette, paletteUV).rgb;
                     
-                    float paletteLuminance = getLuminance(paletteColor);
-                    
-                    float diff = abs(sourceLuminance - paletteLuminance);
+                    float3 d = sourceColor - paletteColor;
+                    float diff = dot(d, d);
                     
                     if (diff < bestDiff) {
                         bestDiff = diff;
