@@ -7,11 +7,12 @@ public class MemoryCardController : MonoBehaviour
     [SerializeField] private PuzzleLogicController puzzleController;
     [Header("corresponding objects list")]
     [SerializeField] private NumberBlockView[] numberBlocks;
-    [SerializeField] private GameObject[] memoryCards;
+    [SerializeField] private MemoryCard[] memoryCards;
     [Header("cursor")]
     [SerializeField] private Transform cursorObject;
     [Header("wrong snswer")]
     [SerializeField] private float disableTime = 1f;
+
     private bool isTemporarilyDisabled = false;
     private Collider2D cursorCollider;
 
@@ -54,7 +55,8 @@ public class MemoryCardController : MonoBehaviour
             {
                 if (i < memoryCards.Length && memoryCards[i] != null)
                 {
-                    memoryCards[i].SetActive(false);
+                    //memoryCards[i].gameObject.SetActive(false);
+                    memoryCards[i].Open();
                 }
 
                 return;
@@ -67,6 +69,7 @@ public class MemoryCardController : MonoBehaviour
         if (isTemporarilyDisabled)
             return;
 
+
         StartCoroutine(WrongAnswerRoutine());
     }
 
@@ -74,7 +77,7 @@ public class MemoryCardController : MonoBehaviour
     {
         isTemporarilyDisabled = true;
         SetCursorCollision(false);
-        SetAllCardsActive(false);
+        SetAllCardsOpen(true);
         yield return new WaitForSeconds(disableTime);
         ResetAllCards();
         SetCursorCollision(true);
@@ -90,11 +93,13 @@ public class MemoryCardController : MonoBehaviour
 
     private void ResetAllCards()
     {
+        SetAllCardsOpen(false);
         for (int i = 0; i < memoryCards.Length; i++)
         {
             if (memoryCards[i] == null)
                 continue;
-            memoryCards[i].SetActive(true);
+            //memoryCards[i].SetActive(true);
+            
             if (i < numberBlocks.Length && numberBlocks[i] != null)
             {
                 numberBlocks[i].IsPressed = false;
@@ -102,13 +107,20 @@ public class MemoryCardController : MonoBehaviour
         }
     }
 
-    private void SetAllCardsActive(bool active)
+    private void SetAllCardsOpen(bool active)
     {
-        foreach (GameObject card in memoryCards)
+        foreach (MemoryCard card in memoryCards)
         {
             if (card != null)
             {
-                card.SetActive(active);
+                if (active)
+                {
+                    card.Open();
+                }
+                else
+                {
+                    card.Close();
+                }
             }
         }
     }
