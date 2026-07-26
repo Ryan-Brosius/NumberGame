@@ -3030,7 +3030,7 @@ PrefabInstance:
     - target: {fileID: 2080943118590045541, guid: 8fd968e34d866e84882d6e5e090fadbc, type: 3}
       propertyPath: levelData
       value: 
-      objectReference: {fileID: 11400000, guid: e7aa9fa3bd2ebce46b59d7bbf73e5114, type: 2}
+      objectReference: {fileID: 11400000, guid: 75cfe414ab91e304ea3fb33efb922759, type: 2}
     - target: {fileID: 4695813222024761092, guid: 8fd968e34d866e84882d6e5e090fadbc, type: 3}
       propertyPath: m_Name
       value: LevelSelectView
@@ -3042,7 +3042,7 @@ PrefabInstance:
     - target: {fileID: 8909943238277993945, guid: 8fd968e34d866e84882d6e5e090fadbc, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5415428649234152837, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
+      objectReference: {fileID: -621392788, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
     - target: {fileID: 8914210175925401242, guid: 8fd968e34d866e84882d6e5e090fadbc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
