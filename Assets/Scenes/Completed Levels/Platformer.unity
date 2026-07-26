@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &11652219
 Rigidbody2D:
@@ -423,6 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &69477386
 Rigidbody2D:
@@ -544,6 +546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &101385252
 Rigidbody2D:
@@ -665,6 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &119884342
 Rigidbody2D:
@@ -786,6 +790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &122337109
 Rigidbody2D:
@@ -1485,18 +1490,6 @@ PrefabInstance:
       value: LevelTimer
       objectReference: {fileID: 0}
     - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.970037
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.7906575
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.005374286
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
@@ -1695,6 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &768338698
 Rigidbody2D:
@@ -2179,6 +2173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &1226425114
 Rigidbody2D:
@@ -2362,6 +2357,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &1374843982
 Rigidbody2D:
@@ -2966,6 +2962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &1690661778
 Rigidbody2D:
@@ -3432,6 +3429,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3947c72ab6bae746a33d566cc3fef9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  puzzleController: {fileID: 0}
   DinoLevel: 1
 --- !u!50 &1881115616
 Rigidbody2D:

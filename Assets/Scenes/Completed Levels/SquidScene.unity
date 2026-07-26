@@ -930,18 +930,6 @@ PrefabInstance:
       value: LevelTimer
       objectReference: {fileID: 0}
     - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.970037
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 5.7906575
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.005374286
-      objectReference: {fileID: 0}
-    - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
