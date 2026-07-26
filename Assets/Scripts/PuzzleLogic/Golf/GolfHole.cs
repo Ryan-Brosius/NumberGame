@@ -7,6 +7,7 @@ public class GolfHole : MonoBehaviour
 
     [SerializeField] private PuzzleLogicController controller;
     [SerializeField] public Transform holeBallPosition;
+    [SerializeField] private NumberBlockView blockView;
 
     [SerializeField] private SpriteRenderer poleSprite;
     [SerializeField] private Sprite noBallSprite;
@@ -32,6 +33,15 @@ public class GolfHole : MonoBehaviour
         ball.CaptureInHole(this);
 
         bool correct = controller.ReportAction(Value);
+        if (correct)
+        {
+            blockView.IsPressed = true;
+            blockView.PlayPressedEffects();
+        }
+        else
+        {
+            blockView.PlayIncorrectEffects();
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
