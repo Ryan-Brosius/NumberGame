@@ -25,6 +25,7 @@ public class LevelTimer : MonoBehaviour
 
     private int timesRegained = 0;
     private bool ended;
+    private bool pauseTimer = false;
     private float timeBarWidth = 0f;
     private Vector2 timeBarDefaultSize = new Vector2(0f, 0f);
     private Transform stopwatchTransform;
@@ -46,6 +47,8 @@ public class LevelTimer : MonoBehaviour
 
         if (controller == null)
             controller = FindAnyObjectByType<PuzzleLogicController>();
+
+        controller.OnSequenceCompleted.AddListener(() => pauseTimer = true);
     }
 
     private void Update()
@@ -56,7 +59,7 @@ public class LevelTimer : MonoBehaviour
         {
             RegainTime();
         }
-        TimeRemaining -= Time.deltaTime;
+        TimeRemaining -= pauseTimer ? 0.0f : Time.deltaTime;
 
         
         var ratio = TimeRemaining / timeLimit;
