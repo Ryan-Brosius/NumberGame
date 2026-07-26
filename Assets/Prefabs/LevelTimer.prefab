@@ -231,6 +231,10 @@ MonoBehaviour:
   stopwatchAnimSpeed: 1.5
   timeBarWidthMax: 8
   timeBarSliceWidth: 14
+  TimeRemaining: 0
+  regainAmount: 1
+  regainDecay: 0.1
+  failSound: {fileID: 8300000, guid: a69af0073ebce4240b06c0d320a5e0f3, type: 3}
 --- !u!1 &7834914226775654207
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class LevelTimer : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class LevelTimer : MonoBehaviour
     [Header("Time Regain")]
     [SerializeField] private float regainAmount = 1f;
     [SerializeField] private float regainDecay = 0.1f;
+
+    [SerializeField] private AudioResource failSound;
 
     private int timesRegained = 0;
     private bool ended;
@@ -98,6 +101,7 @@ public class LevelTimer : MonoBehaviour
             yield break;
 
         ended = true;
+        SoundManager.PlaySound(failSound, volume: 1f);
 
         yield return new WaitForSeconds(loseDelay);
         MainMenuManager.OpenLevelSelectOnNextLoad();
