@@ -236,6 +236,8 @@ MonoBehaviour:
   defaultBorderSprite: {fileID: 8388474660818965928, guid: 8cb6719d93f2b3c47b85066d02a0b85a, type: 3}
   staticAnimSpeed: 0.1
   staticStrength: 1
+  openSound: {fileID: 8300000, guid: b9b1e071c767d5c499ea3e075ec075ae, type: 3}
+  closeSound: {fileID: 8300000, guid: 941ce8c63d412704c8c7264b520dc9da, type: 3}
   sceneName: 
 --- !u!1 &7331308476357135614
 GameObject:

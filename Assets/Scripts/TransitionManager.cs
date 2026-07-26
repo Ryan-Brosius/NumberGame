@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Audio;
 
 public class TransitionManager : MonoBehaviour
 {
@@ -29,7 +30,12 @@ public class TransitionManager : MonoBehaviour
     [Range(0f, 1f)]
     [SerializeField] private float staticStrength = 1f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioResource openSound;
+    [SerializeField] private AudioResource closeSound;
+
     [SerializeField] private string sceneName;
+
 
     private TRANSITION_STATE state = TRANSITION_STATE.CLOSED;
     private float transitionTime = 0f;
@@ -213,6 +219,7 @@ public class TransitionManager : MonoBehaviour
         staticStrengthTarget = 1f;
 
         yield return null;
+        SoundManager.PlaySound(closeSound, volume: 1.0f);
         Debug.Log("Loading level");
         SceneLoader.Instance.LoadLevel(sceneName);
         yield return new WaitForSeconds(closeDelay);
@@ -224,6 +231,7 @@ public class TransitionManager : MonoBehaviour
     public IEnumerator OpenRoutine()
     {
         yield return null;
+        SoundManager.PlaySound(openSound, volume: 1.0f);
         openHoldTime = openHoldTimeMax;
         sizeChangeEnabled = true;
     }
