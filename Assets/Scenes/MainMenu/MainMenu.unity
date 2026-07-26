@@ -1743,7 +1743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &343752718
 Transform:
   m_ObjectHideFlags: 0
@@ -2226,6 +2226,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  startSound: {fileID: 8300000, guid: abeb8e8693c922f4c95e13c15935fa27, type: 3}
 --- !u!61 &530680950
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6672,6 +6673,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  startSound: {fileID: 0}
 --- !u!61 &1910673347
 BoxCollider2D:
   m_ObjectHideFlags: 0
