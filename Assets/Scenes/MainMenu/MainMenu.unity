@@ -2271,7 +2271,7 @@ BoxCollider2D:
     drawMode: 1
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 3.83, y: 1.64}
   m_EdgeRadius: 0
 --- !u!1001 &583302250
 PrefabInstance:
@@ -2782,7 +2782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &704066789
 Transform:
   m_ObjectHideFlags: 0
