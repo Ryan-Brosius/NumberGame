@@ -2618,6 +2618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: LevelTimer
       objectReference: {fileID: 0}
+    - target: {fileID: 6765583381330537226, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
+      propertyPath: regainAmount
+      value: 2.05
+      objectReference: {fileID: 0}
     - target: {fileID: 7645682386477858109, guid: 7c3c9e3591afc164389fbfab974ee0a4, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
