@@ -552,6 +552,50 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: ButtonsBlank_20
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 26
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 6, y: 5, z: 5, w: 6}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4395015fadc41b4d8a3b8a71de30c07
+      internalID: 1562883574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ButtonsBlank_21
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 0
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 6, y: 5, z: 5, w: 6}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d0aaddaf261b3d418fd2ee3d1746982
+      internalID: -1241529876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
@@ -579,6 +623,8 @@ TextureImporter:
       ButtonsBlank_18: -2046250871
       ButtonsBlank_19: -527991916
       ButtonsBlank_2: -1199183065
+      ButtonsBlank_20: 1562883574
+      ButtonsBlank_21: -1241529876
       ButtonsBlank_3: -1341545420
       ButtonsBlank_4: -948898390
       ButtonsBlank_5: -1653461104

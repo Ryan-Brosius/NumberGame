@@ -305,7 +305,7 @@ TextureImporter:
       name: level_icons_7
       rect:
         serializedVersion: 2
-        x: 98
+        x: 96
         y: 65
         width: 24
         height: 27
@@ -503,12 +503,12 @@ TextureImporter:
       name: level_icons_14
       rect:
         serializedVersion: 2
-        x: 126
+        x: 122
         y: 96
         width: 27
         height: 27
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -517,6 +517,28 @@ TextureImporter:
       bones: []
       spriteID: a69bfe0853fa18f4fbd7c6f8acb70b91
       internalID: 7113213640489301136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: level_icons_17
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 69
+        width: 24
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879996d4f8ff77e458e14ed687edbffa
+      internalID: 934784942
       vertices: []
       indices: 
       edges: []
@@ -544,6 +566,7 @@ TextureImporter:
       level_icons_14: 7113213640489301136
       level_icons_15: -6252217354537155593
       level_icons_16: -4951848553735809246
+      level_icons_17: 934784942
       level_icons_2: 2757969559025206618
       level_icons_3: -2292698533589896919
       level_icons_4: -5051152410008374243
