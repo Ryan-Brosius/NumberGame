@@ -21,6 +21,7 @@ public enum LEVEL
     RUN_AWAY,
     MAZE,
     GOLF,
+    TUTORIAL,
 }
 
 

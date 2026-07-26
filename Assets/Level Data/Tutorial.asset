@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 40029936ee4e88e41bddbab09e65ead3, type: 3}
-  m_Name: Wanted
+  m_Name: Tutorial
   m_EditorClassIdentifier: 
-  Index: 6
-  SceneString: Wanted
-  Icon: {fileID: 6922484048964009937, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
-  WindowBorderSprite: {fileID: -453276713, guid: 8cb6719d93f2b3c47b85066d02a0b85a, type: 3}
+  Index: 16
+  SceneString: TutorialLevel
+  Icon: {fileID: -621392788, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
+  WindowBorderSprite: {fileID: 1274238296, guid: 8cb6719d93f2b3c47b85066d02a0b85a, type: 3}
   WindowTextSprite: {fileID: 0}
   ButtonSprite: {fileID: 1562883574, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
   ButtonSpriteComplete: {fileID: -1241529876, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
-  LevelNameSprite: {fileID: -109700033, guid: 14425dd37b290794c9f6c1ec3f667fb0, type: 3}
-  LevelHintSprite: {fileID: 1982852144, guid: 14425dd37b290794c9f6c1ec3f667fb0, type: 3}
+  LevelNameSprite: {fileID: -70145467, guid: 14425dd37b290794c9f6c1ec3f667fb0, type: 3}
+  LevelHintSprite: {fileID: -733314166, guid: 14425dd37b290794c9f6c1ec3f667fb0, type: 3}
