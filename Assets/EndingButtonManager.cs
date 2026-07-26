@@ -8,6 +8,7 @@ public class EndingButtonManager : MonoBehaviour
 
     private void Start()
     {
+        GameProgress.ResetRun();
         GameObject transitionManager = GameObject.Find("TransitionManager");
 
         if (transitionManager != null)
