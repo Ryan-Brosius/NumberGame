@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Index: 4
   SceneString: Math
-  Icon: {fileID: 0}
-  WindowBorderSprite: {fileID: 0}
+  Icon: {fileID: -5051152410008374243, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
+  WindowBorderSprite: {fileID: 1297385226, guid: 8cb6719d93f2b3c47b85066d02a0b85a, type: 3}
   WindowTextSprite: {fileID: 0}
