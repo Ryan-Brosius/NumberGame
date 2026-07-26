@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class GameLoopHub : MonoBehaviour
 {
     [Header("Button References")]
-    [SerializeField] private List<NumberBlockView> buttonViews;
+    [SerializeField] private List<LevelSelectView> buttonViews;
     [SerializeField] private List<NumberBlockData> numberDatas;
 
     [Header("Levels")]
@@ -34,7 +34,22 @@ public class GameLoopHub : MonoBehaviour
     [Header("Events")]
     public UnityEvent OnRunCompleted;
 
+    [Header("Visuals")]
+    [SerializeField] private float buttonSpacing = 2f;
+
     private bool busy;
+
+    public void Update()
+    {
+        // Update position of button views
+        for (int i = 0; i < buttonViews.Count; i++)
+        {
+            buttonViews[i].targetPosition = new Vector3(buttonSpacing * (float)i - (buttonSpacing * GameProgress.CompletedCount), 0f, 0f);
+            buttonViews[i].targetScale = (i > GameProgress.CompletedCount) ? 0.5f : 1f;
+
+                //buttonViews[i].targetScale = 1.0f - Mathf.Abs(i - GameProgress.CompletedCount) * 0.05f;
+        }
+    }
 
     private void OnEnable()
     {

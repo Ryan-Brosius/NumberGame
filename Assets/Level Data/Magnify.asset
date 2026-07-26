@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Index: 9
   SceneString: Magnifying
-  Icon: {fileID: 0}
-  WindowBorderSprite: {fileID: 0}
+  Icon: {fileID: 6274695094513517792, guid: 265e954e8729e024c96b150a45603e1e, type: 3}
+  WindowBorderSprite: {fileID: 8388474660818965928, guid: 8cb6719d93f2b3c47b85066d02a0b85a, type: 3}
   WindowTextSprite: {fileID: 0}
