@@ -56,7 +56,7 @@ public class GolfHole : MonoBehaviour
     public void BallInHole()
     {
         poleSprite.sprite = ballSprite;
-        flagSprite.gameObject.SetActive(false);
+        //flagSprite.gameObject.SetActive(false);
     }
 
     public void BallExitHole()
