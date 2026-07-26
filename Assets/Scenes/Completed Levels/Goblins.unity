@@ -1049,6 +1049,14 @@ MonoBehaviour:
   stretchAmount: 1.25
   painDuration: 0.1
   recoveryDuration: 0.1
+  laughSounds:
+  - {fileID: 8300000, guid: 9ee14e5c890a6ba4faaffb49c07aecd2, type: 3}
+  - {fileID: 8300000, guid: d5d6d0048c3ce3847a0fd5f92caf5527, type: 3}
+  - {fileID: 8300000, guid: 2972c738c88242b43b892e96f954e002, type: 3}
+  bonkSounds:
+  - {fileID: 8300000, guid: c374e665d8df4ac4abf1f09a7a654a4c, type: 3}
+  - {fileID: 8300000, guid: c7711cc53b3d0174a832e3ef3ca4752f, type: 3}
+  - {fileID: 8300000, guid: e21ebbbc4acb9764f987f7e48594631b, type: 3}
 --- !u!222 &232694568
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1439,6 +1447,14 @@ MonoBehaviour:
   stretchAmount: 1.25
   painDuration: 0.1
   recoveryDuration: 0.1
+  laughSounds:
+  - {fileID: 8300000, guid: 9ee14e5c890a6ba4faaffb49c07aecd2, type: 3}
+  - {fileID: 8300000, guid: d5d6d0048c3ce3847a0fd5f92caf5527, type: 3}
+  - {fileID: 8300000, guid: 2972c738c88242b43b892e96f954e002, type: 3}
+  bonkSounds:
+  - {fileID: 8300000, guid: c374e665d8df4ac4abf1f09a7a654a4c, type: 3}
+  - {fileID: 8300000, guid: c7711cc53b3d0174a832e3ef3ca4752f, type: 3}
+  - {fileID: 8300000, guid: e21ebbbc4acb9764f987f7e48594631b, type: 3}
 --- !u!222 &445647230
 CanvasRenderer:
   m_ObjectHideFlags: 0
