@@ -61,6 +61,13 @@ public class NumberBlockView : MonoBehaviour
 
     public virtual void ApplyState()
     {
+        if (BlockData.IsDoppleganger)
+        {
+            renderer1.sprite = BlockData.DopplegangerSpritesBottom[Random.Range(0, BlockData.DopplegangerSpritesBottom.Count - 1)];
+            renderer2.sprite = BlockData.DopplegangerSpritesTop[Random.Range(0, BlockData.DopplegangerSpritesTop.Count - 1)];
+            return;
+        }
+
         if (isPressed)
         {
             if (renderer1 != null)
