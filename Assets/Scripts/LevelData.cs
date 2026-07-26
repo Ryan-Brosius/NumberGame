@@ -35,4 +35,6 @@ public class LevelData : ScriptableObject
     public Sprite WindowTextSprite;
     public Sprite ButtonSprite;
     public Sprite ButtonSpriteComplete;
+    public Sprite LevelNameSprite;
+    public Sprite LevelHintSprite;
 }

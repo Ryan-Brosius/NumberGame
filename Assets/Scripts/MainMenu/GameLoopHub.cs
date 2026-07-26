@@ -22,7 +22,7 @@ public class GameLoopHub : MonoBehaviour
     [Tooltip("Pause before button roll")]
     [SerializeField] private float rollbackStartDelay = 0.6f;
     [Tooltip("Delay between first button re-pressing")]
-    [SerializeField] private float rollbackFirstGap = 0.45f;
+    [SerializeField] private float rollbackFirstGap = 0.15f;
     [Tooltip("get faster")]
     [SerializeField] private float rollbackSpeedup = 0.75f;
     [SerializeField] private float rollbackMinGap = 0.05f;
@@ -35,16 +35,21 @@ public class GameLoopHub : MonoBehaviour
     public UnityEvent OnRunCompleted;
 
     [Header("Visuals")]
-    [SerializeField] private float buttonSpacing = 2f;
+    [SerializeField] private float buttonSpacing = 2.5f;
+    [SerializeField] private SpriteRenderer levelNameSR;
+    [SerializeField] private SpriteRenderer levelHintSR;
 
     private bool busy;
 
     public void Update()
     {
         // Update position of button views
+        var yOffset = 0f;
         for (int i = 0; i < buttonViews.Count; i++)
         {
-            buttonViews[i].targetPosition = new Vector3(buttonSpacing * (float)i - (buttonSpacing * GameProgress.CompletedCount), 0f, 0f);
+            yOffset = (i == GameProgress.CompletedCount) ? 0.0625f * 3f : 0f;
+            buttonViews[i].targetPosition = new Vector3(buttonSpacing * (float)i - (buttonSpacing * GameProgress.CompletedCount), yOffset, 0f);
+
             //buttonViews[i].targetScale = (i > GameProgress.CompletedCount) ? 0.5f : 1f;
 
                 //buttonViews[i].targetScale = 1.0f - Mathf.Abs(i - GameProgress.CompletedCount) * 0.05f;
@@ -75,6 +80,7 @@ public class GameLoopHub : MonoBehaviour
         }
 
         busy = false;
+
     }
 
     private void ApplyBaseState()
@@ -84,10 +90,40 @@ public class GameLoopHub : MonoBehaviour
             buttonViews[i].SetData(numberDatas[i], numberDatas[i]);
             buttonViews[i].IsPressed = !(i >= GameProgress.CompletedCount);
         }
+
+        UpdateNameAndHint(GameProgress.CompletedCount);
+    }
+
+    private void HideNameAndHint()
+    {
+        levelNameSR.gameObject.SetActive(false);
+        //levelHintSR.gameObject.SetActive(false);
+    }
+
+    private void ShowNameAndHint()
+    {
+        levelNameSR.gameObject.SetActive(true);
+        //levelHintSR.gameObject.SetActive(false);
+    }
+
+    private void UpdateNameAndHint(int buttonIndex)
+    {
+        ShowNameAndHint();
+        if (buttonViews[buttonIndex] != null)
+        {
+            if (buttonViews[buttonIndex].levelData != null)
+            {
+                levelNameSR.gameObject.SetActive(true);
+                levelHintSR.gameObject.SetActive(true);
+                levelNameSR.sprite = buttonViews[buttonIndex].levelData.LevelNameSprite;
+                levelHintSR.sprite = buttonViews[buttonIndex].levelData.LevelHintSprite;
+            }
+        }
     }
 
     private IEnumerator ActivateEarnedButton()
     {
+        HideNameAndHint();
         yield return new WaitForSeconds(activateDelay);
 
         NumberBlockView earned = buttonViews[GameProgress.CompletedCount];
@@ -101,10 +137,15 @@ public class GameLoopHub : MonoBehaviour
             yield return new WaitForSeconds(0.8f);
             OnRunCompleted?.Invoke();
         }
+        else
+        {
+            UpdateNameAndHint(GameProgress.CompletedCount);
+        }
     }
 
     private IEnumerator RollbackAndShuffle()
     {
+        HideNameAndHint();
         yield return new WaitForSeconds(rollbackStartDelay);
 
         // re-enable each button that was pressed
@@ -166,6 +207,7 @@ public class GameLoopHub : MonoBehaviour
 
     private IEnumerator LaunchRandomLevel(NumberBlockView clickedView)
     {
+        HideNameAndHint();
         busy = true;
         clickedView.PlayPressedEffects();
 

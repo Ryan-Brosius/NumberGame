@@ -16,7 +16,7 @@ public class LevelSelectView : NumberBlockView
 
     public override void ApplyState()
     {
-        renderer1.sprite = levelData.ButtonSprite;
+        renderer1.sprite = (isPressed)? levelData.ButtonSpriteComplete : levelData.ButtonSprite;
         renderer2.sprite = levelData.Icon;
 
         if (audioSourceTone != null)

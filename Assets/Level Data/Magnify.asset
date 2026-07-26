@@ -19,3 +19,5 @@ MonoBehaviour:
   WindowTextSprite: {fileID: 0}
   ButtonSprite: {fileID: 1562883574, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
   ButtonSpriteComplete: {fileID: -1241529876, guid: 66b159d9a3b62204688506c2c460f152, type: 3}
+  LevelNameSprite: {fileID: -640074663, guid: 14425dd37b290794c9f6c1ec3f667fb0, type: 3}
+  LevelHintSprite: {fileID: -931638079, guid: 14425dd37b290794c9f6c1ec3f667fb0, type: 3}
