@@ -45,7 +45,7 @@ public class GameLoopHub : MonoBehaviour
         for (int i = 0; i < buttonViews.Count; i++)
         {
             buttonViews[i].targetPosition = new Vector3(buttonSpacing * (float)i - (buttonSpacing * GameProgress.CompletedCount), 0f, 0f);
-            buttonViews[i].targetScale = (i > GameProgress.CompletedCount) ? 0.5f : 1f;
+            //buttonViews[i].targetScale = (i > GameProgress.CompletedCount) ? 0.5f : 1f;
 
                 //buttonViews[i].targetScale = 1.0f - Mathf.Abs(i - GameProgress.CompletedCount) * 0.05f;
         }
@@ -129,12 +129,19 @@ public class GameLoopHub : MonoBehaviour
             int b = Random.Range(0, buttonViews.Count - 1);
             if (b >= a) b++;   // distinct pair
 
-            NumberBlockData dataA = buttonViews[a].BlockData;
-            buttonViews[a].SetData(buttonViews[b].BlockData, buttonViews[b].BlockData);
-            buttonViews[b].SetData(dataA, dataA);
+            //NumberBlockData dataA = buttonViews[a].BlockData;
+            //buttonViews[a].SetData(buttonViews[b].BlockData, buttonViews[b].BlockData);
+            //buttonViews[b].SetData(dataA, dataA);
+            //LevelData dataA = buttonViews[a].levelData;
+            buttonViews[a].SetLevelData(levelPool[Random.Range(0, levelPool.Count-1)]);
+            buttonViews[b].SetLevelData(levelPool[Random.Range(0, levelPool.Count - 1)]);
+
+            //SetLevelData
 
             buttonViews[a].PlayResetEffects();
             buttonViews[b].PlayResetEffects();
+
+
 
             yield return new WaitForSeconds(shuffleGap);
         }
@@ -162,7 +169,8 @@ public class GameLoopHub : MonoBehaviour
         busy = true;
         clickedView.PlayPressedEffects();
 
-        LevelData level = PickRandomUnusedLevel();
+        //LevelData level = PickRandomUnusedLevel();
+        LevelData level = buttonViews[GameProgress.CompletedCount].levelData;
 
         GameProgress.UsedLevels.Add(level.Index);
 
