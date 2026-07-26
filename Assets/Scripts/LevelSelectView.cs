@@ -6,17 +6,17 @@ public class LevelSelectView : NumberBlockView
     public LevelData levelData;
 
     public Vector3 targetPosition;
-    public float targetScale;
+    public float targetScale = 1f;
 
     private void Update()
     {
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPosition, 0.1f);
-        transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(targetScale, targetScale, 1f), 0.1f);
+        //transform.localScale = Vector3.Lerp(transform.localScale, new Vector3(targetScale, targetScale, 1f), 0.1f);
     }
 
     public override void ApplyState()
     {
-        renderer1.sprite = levelData.Icon;
+        renderer1.sprite = levelData.ButtonSprite;
         renderer2.sprite = levelData.Icon;
 
         if (audioSourceTone != null)
