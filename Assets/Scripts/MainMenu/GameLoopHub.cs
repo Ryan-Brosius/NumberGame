@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Audio;
+using System.Linq;
 
 public class GameLoopHub : MonoBehaviour
 {
@@ -74,6 +75,7 @@ public class GameLoopHub : MonoBehaviour
         {
             case GameProgress.Result.Completed:
                 GameProgress.LastResult = GameProgress.Result.None;
+                SetCorrectLevels();
                 yield return ActivateEarnedButton();
                 break;
 
@@ -121,6 +123,17 @@ public class GameLoopHub : MonoBehaviour
                 levelHintSR.gameObject.SetActive(true);
                 levelNameSR.sprite = buttonViews[buttonIndex].levelData.LevelNameSprite;
                 levelHintSR.sprite = buttonViews[buttonIndex].levelData.LevelHintSprite;
+            }
+        }
+    }
+
+    private void SetCorrectLevels()
+    {
+        if (GameProgress.CurrentLevels.Count > 0)
+        {
+            for (int i = 0; i < GameProgress.CurrentLevels.Count; i++)
+            {
+                buttonViews[i].SetLevelData(levelPool.First(l => l.Index == GameProgress.CurrentLevels[i]));
             }
         }
     }
@@ -173,16 +186,16 @@ public class GameLoopHub : MonoBehaviour
         // shuffle everything
         for (int s = 0; s < shuffleSwaps; s++)
         {
-            int a = Random.Range(0, buttonViews.Count - 1);
-            int b = Random.Range(0, buttonViews.Count - 2);
+            int a = Random.Range(1, buttonViews.Count - 1);
+            int b = Random.Range(1, buttonViews.Count - 2);
             if (b >= a) b++;   // distinct pair
 
             //NumberBlockData dataA = buttonViews[a].BlockData;
             //buttonViews[a].SetData(buttonViews[b].BlockData, buttonViews[b].BlockData);
             //buttonViews[b].SetData(dataA, dataA);
             //LevelData dataA = buttonViews[a].levelData;
-            buttonViews[a].SetLevelData(levelPool[Random.Range(0, levelPool.Count-1)]);
-            buttonViews[b].SetLevelData(levelPool[Random.Range(0, levelPool.Count - 1)]);
+            buttonViews[a].SetLevelData(levelPool[Random.Range(1, levelPool.Count-1)]);
+            buttonViews[b].SetLevelData(levelPool[Random.Range(1, levelPool.Count - 1)]);
 
             //SetLevelData
 
@@ -193,6 +206,23 @@ public class GameLoopHub : MonoBehaviour
 
             yield return new WaitForSeconds(shuffleGap);
         }
+
+        var levels = GetRandomLevels(buttonViews.Count - 1);
+        for (int i = 1; i < levels.Count; ++i)
+        {
+            buttonViews[i].SetLevelData(levels[i]);
+        }
+        if (GameProgress.UsedLevels.Count > 0 && buttonViews[1].levelData.Index == GameProgress.UsedLevels[GameProgress.UsedLevels.Count - 1])
+        {
+            (buttonViews[1].levelData, buttonViews[buttonViews.Count - 1].levelData) = (buttonViews[buttonViews.Count - 1].levelData, buttonViews[1].levelData);
+            buttonViews[1].ApplyState();
+            buttonViews[buttonViews.Count - 1].ApplyState();
+        }
+
+        GameProgress.CurrentLevels.Clear();
+        GameProgress.CurrentLevels = levels.Select(level => level.Index).ToList();
+
+        Debug.Log("bruh");
 
         yield return new WaitForSeconds(0.3f);
 
@@ -239,5 +269,20 @@ public class GameLoopHub : MonoBehaviour
             return null;
 
         return unused[Random.Range(0, unused.Count)];
+    }
+
+    public List<LevelData> GetRandomLevels(int count)
+    {
+        count = Mathf.Clamp(count, 0, levelPool.Count);
+
+        List<LevelData> shuffled = new List<LevelData>(levelPool);
+
+        for (int i = shuffled.Count - 1; i > 0; i--)
+        {
+            int j = Random.Range(0, i + 1);
+            (shuffled[i], shuffled[j]) = (shuffled[j], shuffled[i]);
+        }
+
+        return shuffled.GetRange(0, count);
     }
 }

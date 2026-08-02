@@ -11,6 +11,8 @@ public static class GameProgress
 
     public static readonly List<LEVEL> UsedLevels = new List<LEVEL>();
 
+    public static List<LEVEL> CurrentLevels = new List<LEVEL>();
+
     public static void ResetRun()
     {
         CompletedCount = 0;

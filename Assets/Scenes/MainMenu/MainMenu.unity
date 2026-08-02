@@ -3420,6 +3420,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8943265083436316747, guid: b229710aec26b7c47a3d9ddbd9c23768, type: 3}
   m_PrefabInstance: {fileID: 856308338}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &920402353 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 428458, guid: d6a6378baf728479c897f88a892620af, type: 3}
+  m_PrefabInstance: {fileID: 1887518680}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &961053945
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6425,6 +6430,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 428458, guid: d6a6378baf728479c897f88a892620af, type: 3}
       propertyPath: m_LocalScale.x
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 428458, guid: d6a6378baf728479c897f88a892620af, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7537499
+      objectReference: {fileID: 0}
+    - target: {fileID: 428458, guid: d6a6378baf728479c897f88a892620af, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.7537499
+      objectReference: {fileID: 0}
+    - target: {fileID: 428458, guid: d6a6378baf728479c897f88a892620af, type: 3}
+      propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -7346,6 +7363,22 @@ PrefabInstance:
     - target: {fileID: 4660663474263867526, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671285252839624470, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
+      propertyPath: worldQuad
+      value: 
+      objectReference: {fileID: 920402353}
+    - target: {fileID: 4671285252839624470, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
+      propertyPath: surfaceKind
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671285252839624470, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
+      propertyPath: renderCamera
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4671285252839624470, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
+      propertyPath: displayCamera
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5182788472401057066, guid: 5982ec6a5395c694ea4b5f6bb697034d, type: 3}
       propertyPath: m_LocalPosition.x
